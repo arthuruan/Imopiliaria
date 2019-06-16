@@ -18,7 +18,7 @@ int menu1() {//Menu de inicio do programa
 
 	int tecla, posicao = 1;
 
-	printf("---------------Seja bem-vindo ao Imopiilaria---------------\n\n\n\n\n");
+	printf("\n\n\n\n\n---------------Seja bem-vindo ao Imopiilaria---------------\n\n\n\n\n");
 
 	system("pause");
 
@@ -40,7 +40,7 @@ int menu1() {//Menu de inicio do programa
 		}
 
 		else if (posicao == 2) {
-			printf("Escolha uma opção:\n");
+			printf("Escolha uma opcao:\n");
 			printf("Cadastrar Imovel\n");
 			printf("\t%sSair\n", ">>");
 
