@@ -13,21 +13,17 @@ versão alpha: 0.1
 #define SETA_CIMA 72
 #define ENTER 13
 
-
 int menu1() {//Menu de inicio do programa
 
 	int tecla, posicao = 1;
-
-	printf("\n\n\n\n\n---------------Seja bem-vindo ao Imopiilaria---------------\n\n\n\n\n");
-
-	system("pause");
 
 	while (1) {
 
 		CLEAR;
 
 		if (posicao == 1) {
-			printf("Escolha uma opcao:\n");
+			printf("\n\n---------------Seja bem-vindo ao Imopiilaria---------------\n\n\n");
+			printf("Escolha uma opcao:\n\n");
 			printf("\t%sCadastrar Imovel\n", ">>");
 			printf("Sair\n");
 
@@ -40,7 +36,8 @@ int menu1() {//Menu de inicio do programa
 		}
 
 		else if (posicao == 2) {
-			printf("Escolha uma opcao:\n");
+			printf("\n\n---------------Seja bem-vindo ao Imopiilaria---------------\n\n\n");
+			printf("Escolha uma opcao:\n\n");
 			printf("Cadastrar Imovel\n");
 			printf("\t%sSair\n", ">>");
 
@@ -63,10 +60,11 @@ int menu2() {//menu apos o usario selecionar a opção cadastrar
 		CLEAR;
 
 		if (posicao == 1) {
-			printf("Escolha uma opcao:\n");
+			printf("Escolha uma opcao:\n\n");
 			printf("\t%sCasa\n", ">>");
 			printf("Apartamento\n");
 			printf("Terreno\n");
+			printf("Voltar\n");
 
 			tecla = getch();
 
@@ -79,10 +77,11 @@ int menu2() {//menu apos o usario selecionar a opção cadastrar
 		}
 
 		else if (posicao == 2) {
-			printf("Escolha uma opcao:\n");
+			printf("Escolha uma opcao:\n\n");
 			printf("Casa\n");
 			printf("\t%sApartamento\n", ">>");
 			printf("Terreno\n");
+			printf("Voltar\n");
 
 			tecla = getch();
 
@@ -96,10 +95,11 @@ int menu2() {//menu apos o usario selecionar a opção cadastrar
 
 		else if (posicao == 3) {
 
-			printf("Escolha uma opcao:\n");
+			printf("Escolha uma opcao:\n\n");
 			printf("Casa\n");
 			printf("Apartamento\n");
 			printf("\t%sTerreno\n", ">>");
+			printf("Voltar\n");
 
 			tecla = getch();
 
@@ -116,6 +116,11 @@ int menu2() {//menu apos o usario selecionar a opção cadastrar
 	}
 }
 
+int cadastra_imovel(menu2()){
+
+
+}
+
 int main(void) {
 
     int flagmenu=0;
@@ -124,7 +129,7 @@ int main(void) {
         switch(menu1()){
             case 1:
                 flagmenu = 1;
-                system("cls");
+                CLEAR;
                 menu2();
                 break;
             case 2:
@@ -133,5 +138,4 @@ int main(void) {
         if(flagmenu)
             break;
     }
-	return 0;
 }
