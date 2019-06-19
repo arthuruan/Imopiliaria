@@ -194,6 +194,7 @@ int main(void) {
 					case 3:
 						break;
 					case 4:
+						flagmenu = 0;
 						break;
 				}
                 break;
@@ -202,9 +203,12 @@ int main(void) {
 			case 3:
 				break;
 			case 4:
+				flagmenu = 1;
 				break;
         }
         if(flagmenu)
             break;
     }
+	
+	return 0;
 }
