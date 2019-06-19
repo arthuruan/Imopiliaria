@@ -22,31 +22,75 @@ int menu1() {//Menu de inicio do programa
 		CLEAR;
 
 		if (posicao == 1) {
-			printf("\n\n---------------Seja bem-vindo ao Imopiilaria---------------\n\n\n");
+			printf("\n\tSeja bem-vindo ao Imopiilaria\n\n");
 			printf("Escolha uma opcao:\n\n");
 			printf("\t%sCadastrar Imovel\n", ">>");
+			printf("Excluir Imovel\n");
+			printf("Salvar\n");
 			printf("Sair\n");
 
 			tecla = getch();
 
 			if (tecla == ENTER)
 				return 1;
-			else if (tecla == SETA_BAIXO || tecla == SETA_CIMA)
+			else if (tecla == SETA_BAIXO)
 				posicao = 2;
+			else if (tecla == SETA_CIMA)
+				posicao = 4;
 		}
 
 		else if (posicao == 2) {
-			printf("\n\n---------------Seja bem-vindo ao Imopiilaria---------------\n\n\n");
+			printf("\n\tSeja bem-vindo ao Imopiilaria\n\n");
 			printf("Escolha uma opcao:\n\n");
 			printf("Cadastrar Imovel\n");
-			printf("\t%sSair\n", ">>");
+			printf("\t%sExcluir Imovel\n", ">>");
+			printf("Salvar\n");
+			printf("Sair\n");
 
 			tecla = getch();
 
 			if (tecla == ENTER)
 				return 2;
-			else if (tecla == SETA_BAIXO || tecla == SETA_CIMA)
+			else if (tecla == SETA_BAIXO)
+				posicao = 3;
+			else if(tecla == SETA_CIMA)
 				posicao = 1;
+		}
+
+		else if (posicao == 3) {
+			printf("\n\tSeja bem-vindo ao Imopiilaria\n\n");
+			printf("Escolha uma opcao:\n\n");
+			printf("Cadastrar Imovel\n");
+			printf("Excluir Imovel\n");
+			printf("\t%sSalvar\n", ">>");
+			printf("Sair\n");
+
+			tecla = getch();
+
+			if (tecla == ENTER)
+				return 3;
+			else if (tecla == SETA_BAIXO)
+				posicao = 4;
+			else if (tecla == SETA_CIMA)
+				posicao = 2;
+		}
+
+		else if (posicao == 4) {
+			printf("\n\tSeja bem-vindo ao Imopiilaria\n\n");
+			printf("Escolha uma opcao:\n\n");
+			printf("Cadastrar Imovel\n");
+			printf("Excluir Imovel\n");
+			printf("Salvar\n");
+			printf("\t%sSair\n", ">>");
+
+			tecla = getch();
+
+			if (tecla == ENTER)
+				return 4;
+			else if (tecla == SETA_BAIXO)
+				posicao = 1;
+			else if (tecla == SETA_CIMA)
+				posicao = 3;
 		}
 	}
 }
@@ -107,12 +151,28 @@ int menu2() {//menu apos o usario selecionar a opção cadastrar
 				return 3;
 
 			else if (tecla == SETA_BAIXO)
-				posicao = 1;
+				posicao = 4;
 
 			else if (tecla == SETA_CIMA)
 				posicao = 2;
 		}
 
+		else if (posicao == 4) {
+				printf("Escolha uma opcao:\n\n");
+				printf("Casa\n", ">>");
+				printf("Apartamento\n");
+				printf("Terreno\n");
+				printf("\t%sVoltar\n", ">>");
+
+				tecla = getch();
+
+				if (tecla == ENTER)
+					return 4;
+				else if (tecla == SETA_BAIXO)
+					posicao = 1;
+				else if (tecla == SETA_CIMA)
+					posicao = 3;
+		}
 	}
 }
 
