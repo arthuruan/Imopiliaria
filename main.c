@@ -181,14 +181,28 @@ int main(void) {
     int flagmenu=0;
 
     while(1){
+
         switch(menu1()){
             case 1:
                 flagmenu = 1;
                 CLEAR;
-                menu2();
+                switch(menu2()){
+					case 1:
+						break;
+					case 2:
+						break;
+					case 3:
+						break;
+					case 4:
+						break;
+				}
                 break;
             case 2:
-                return 0;
+                break;
+			case 3:
+				break;
+			case 4:
+				break;
         }
         if(flagmenu)
             break;
