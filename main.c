@@ -69,7 +69,7 @@ int menu2() {//menu apos o usario selecionar a opção cadastrar
 			tecla = getch();
 
 			if (tecla == ENTER)
-				return 3;
+				return 1;
 			else if (tecla == SETA_BAIXO)
 				posicao = 2;
 			else if (tecla == SETA_CIMA)
@@ -86,7 +86,7 @@ int menu2() {//menu apos o usario selecionar a opção cadastrar
 			tecla = getch();
 
 			if (tecla == ENTER)
-				return 4;
+				return 2;
 			else if (tecla == SETA_BAIXO)
 				posicao = 3;
 			else if (tecla == SETA_CIMA)
@@ -104,7 +104,7 @@ int menu2() {//menu apos o usario selecionar a opção cadastrar
 			tecla = getch();
 
 			if (tecla == ENTER)
-				return 5;
+				return 3;
 
 			else if (tecla == SETA_BAIXO)
 				posicao = 1;
@@ -114,11 +114,6 @@ int menu2() {//menu apos o usario selecionar a opção cadastrar
 		}
 
 	}
-}
-
-int cadastra_imovel(menu2()){
-
-
 }
 
 int main(void) {
