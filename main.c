@@ -22,11 +22,15 @@ int menu1() {//Menu de inicio do programa
 		CLEAR;
 
 		if (posicao == 1) {
-			printf("\n\tSeja bem-vindo ao Imopiilaria\n\n");
-			printf("Escolha uma opcao:\n\n");
+			printf("\n\tEscolha uma opcao:\n\n");
 			printf("\t%sCadastrar Imovel\n", ">>");
+			printf("Consultar imoveis disponiveis\n");
+			printf("Buscar imoveis\n");
+			printf("Imoveis disponiveis\n");
 			printf("Excluir Imovel\n");
-			printf("Salvar\n");
+			printf("Editar imovel\n");
+			printf("Salvar lista\n");
+			printf("Ler lista\n");
 			printf("Sair\n");
 
 			tecla = getch();
@@ -36,15 +40,18 @@ int menu1() {//Menu de inicio do programa
 			else if (tecla == SETA_BAIXO)
 				posicao = 2;
 			else if (tecla == SETA_CIMA)
-				posicao = 4;
+				posicao = 9;
 		}
-
 		else if (posicao == 2) {
-			printf("\n\tSeja bem-vindo ao Imopiilaria\n\n");
-			printf("Escolha uma opcao:\n\n");
+			printf("\n\tEscolha uma opcao:\n\n");
 			printf("Cadastrar Imovel\n");
-			printf("\t%sExcluir Imovel\n", ">>");
-			printf("Salvar\n");
+			printf("\t%sConsultar imoveis disponiveis\n", ">>");
+			printf("Buscar imoveis\n");
+			printf("Imoveis disponiveis\n");
+			printf("Excluir Imovel\n");
+			printf("Editar imovel\n");
+			printf("Salvar lista\n");
+			printf("Ler lista\n");
 			printf("Sair\n");
 
 			tecla = getch();
@@ -56,13 +63,16 @@ int menu1() {//Menu de inicio do programa
 			else if(tecla == SETA_CIMA)
 				posicao = 1;
 		}
-
 		else if (posicao == 3) {
-			printf("\n\tSeja bem-vindo ao Imopiilaria\n\n");
-			printf("Escolha uma opcao:\n\n");
+			printf("\n\tEscolha uma opcao:\n\n");
 			printf("Cadastrar Imovel\n");
+			printf("Consultar imoveis disponiveis\n");
+			printf("\t%sBuscar imoveis\n", ">>");
+			printf("Imoveis disponiveis\n");
 			printf("Excluir Imovel\n");
-			printf("\t%sSalvar\n", ">>");
+			printf("Editar imovel\n");
+			printf("Salvar lista\n");
+			printf("Ler lista\n");
 			printf("Sair\n");
 
 			tecla = getch();
@@ -74,23 +84,131 @@ int menu1() {//Menu de inicio do programa
 			else if (tecla == SETA_CIMA)
 				posicao = 2;
 		}
-
 		else if (posicao == 4) {
-			printf("\n\tSeja bem-vindo ao Imopiilaria\n\n");
-			printf("Escolha uma opcao:\n\n");
+			printf("\n\tEscolha uma opcao:\n\n");
 			printf("Cadastrar Imovel\n");
+			printf("Consultar imoveis disponiveis\n");
+			printf("Buscar imoveis\n");
+			printf("\t%sImoveis disponiveis\n", ">>");
 			printf("Excluir Imovel\n");
-			printf("Salvar\n");
-			printf("\t%sSair\n", ">>");
+			printf("Editar imovel\n");
+			printf("Salvar lista\n");
+			printf("Ler lista\n");
+			printf("Sair\n");
 
 			tecla = getch();
 
 			if (tecla == ENTER)
 				return 4;
 			else if (tecla == SETA_BAIXO)
-				posicao = 1;
+				posicao = 5;
 			else if (tecla == SETA_CIMA)
 				posicao = 3;
+		}
+		else if (posicao == 5) {
+			printf("\n\tEscolha uma opcao:\n\n");
+			printf("Cadastrar Imovel\n");
+			printf("Consultar imoveis disponiveis\n");
+			printf("Buscar imoveis\n");
+			printf("Imoveis disponiveis\n");
+			printf("\t%sExcluir Imovel\n", ">>");
+			printf("Editar imovel\n");
+			printf("Salvar lista\n");
+			printf("Ler lista\n");
+			printf("Sair\n");
+
+			tecla = getch();
+
+			if (tecla == ENTER)
+				return 5;
+			else if (tecla == SETA_BAIXO)
+				posicao = 6;
+			else if (tecla == SETA_CIMA)
+				posicao = 4;
+		}
+		else if (posicao == 6) {
+			printf("\n\tEscolha uma opcao:\n\n");
+			printf("Cadastrar Imovel\n");
+			printf("Consultar imoveis disponiveis\n");
+			printf("Buscar imoveis\n");
+			printf("Imoveis disponiveis\n");
+			printf("Excluir Imovel\n");
+			printf("\t%sEditar imovel\n", ">>");
+			printf("Salvar lista\n");
+			printf("Ler lista\n");
+			printf("Sair\n");
+
+			tecla = getch();
+
+			if (tecla == ENTER)
+				return 6;
+			else if (tecla == SETA_BAIXO)
+				posicao = 7;
+			else if (tecla == SETA_CIMA)
+				posicao = 5;
+		}
+		else if (posicao == 7) {
+			printf("\n\tEscolha uma opcao:\n\n");
+			printf("Cadastrar Imovel\n");
+			printf("Consultar imoveis disponiveis\n");
+			printf("Buscar imoveis\n");
+			printf("Imoveis disponiveis\n");
+			printf("Excluir Imovel\n");
+			printf("Editar imovel\n");
+			printf("\t%sSalvar lista\n", ">>");
+			printf("Ler lista\n");
+			printf("Sair\n");
+
+			tecla = getch();
+
+			if (tecla == ENTER)
+				return 7;
+			else if (tecla == SETA_BAIXO)
+				posicao = 8;
+			else if (tecla == SETA_CIMA)
+				posicao = 6;
+		}
+		else if (posicao == 8) {
+			printf("\n\tEscolha uma opcao:\n\n");
+			printf("Cadastrar Imovel\n");
+			printf("Consultar imoveis disponiveis\n");
+			printf("Buscar imoveis\n");
+			printf("Imoveis disponiveis\n");
+			printf("Excluir Imovel\n");
+			printf("Editar imovel\n");
+			printf("Salvar lista\n");
+			printf("\t%sLer lista\n", ">>");
+			printf("Sair\n");
+
+			tecla = getch();
+
+			if (tecla == ENTER)
+				return 8;
+			else if (tecla == SETA_BAIXO)
+				posicao = 9;
+			else if (tecla == SETA_CIMA)
+				posicao = 7;
+		}
+		else if (posicao == 9) {
+			printf("\n\tEscolha uma opcao:\n\n");
+			printf("Cadastrar Imovel\n");
+			printf("Consultar imoveis disponiveis\n");
+			printf("Buscar imoveis\n");
+			printf("Imoveis disponiveis\n");
+			printf("Excluir Imovel\n");
+			printf("Editar imovel\n");
+			printf("Salvar lista\n");
+			printf("Ler lista\n");
+			printf("\t%sSair\n", ">>");
+
+			tecla = getch();
+
+			if (tecla == ENTER)
+				return 9;
+			else if (tecla == SETA_BAIXO)
+				posicao = 1;
+			else if (tecla == SETA_CIMA)
+				posicao = 8;
 		}
 	}
 }
@@ -203,6 +321,16 @@ int main(void) {
 			case 3:
 				break;
 			case 4:
+				break;
+			case 5:
+				break;
+			case 6:
+				break;
+			case 7:
+				break;
+			case 8:
+				break;
+			case 9:
 				flagmenu = 1;
 				break;
         }
