@@ -1,0 +1,4 @@
+{
+    "c-cpp-compile-run.run-in-external-terminal": true,
+    "c-cpp-compile-run.cpp-compiler": "gcc"
+}
