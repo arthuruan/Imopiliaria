@@ -19,7 +19,7 @@ typedef struct apartamento{
     float area; //area do apartamento
     int quartos; //nuemro de quartos no apartamneto
     int andar; //andar que o apartamento se encontra
-    int valorCond; //valor do condominio
+    float valorCond; //valor do condominio
     int garagem; //numero de vagas de garagem
 }t_apartamento;
 
@@ -41,7 +41,7 @@ typedef struct Cadastro{
     char cidade[100];
     char disponivel[10];
     char cep[15];
-    int valor;
+    float valor;
     t_casa casa;
     t_apartamento apartamento;
     t_terreno terreno;
@@ -332,8 +332,16 @@ int menu2() {//menu apos o usario selecionar a opção cadastrar
 
 void CadastroAll(int flag){
 
+	int i = 0, confirma;
+
     while(1){
-        int i=0;
+		int posVaga = -1;
+     	for(i = 0; i<100; i++){
+        	if(imovel[i].titulo[0] == 0){
+            	posVaga = i;
+            	break;
+        	}
+     	}
 
 		CLEAR;
         printf("Digite a cidade do seu imovel : ");
@@ -349,7 +357,7 @@ void CadastroAll(int flag){
         imovel[i].cep [strlen(imovel[i].cep)-1] = '\0';
 
         printf("Digite o valor do seu imovel : ");
-        scanf("%d", &imovel[i].valor);
+        scanf("%f", &imovel[i].valor);
         FLUSH;
 
         printf("Digite a disponibilidade do seu imovel (Aluguel ou Venda) : ");
@@ -401,26 +409,40 @@ void CadastroAll(int flag){
             scanf("%f", &imovel[i].apartamento.valorCond);
 
             printf("Digite o numero de vagas de garagem : ");
-            scanf("%f", &imovel[i].apartamento.garagem);
+            scanf("%d", &imovel[i].apartamento.garagem);
             FLUSH;
 
             break;
 
         }else if(flag == 3){
             printf("Digite a area do terreno (em metros quadrados) : ");
-            scanf("f", &imovel[i].terreno.area);
+            scanf("%f", &imovel[i].terreno.area);
             FLUSH;
 
 			break;
 
         }
         i++;
-    }
+	printf("Deseja confirmar o cadastro : (s ou n):");
+	scanf("%c", &confirma);
+	if(confirma == 's'){
+
+
+
+
+
+
+	}
+	
+	
+	
+	
+	}
 }
 
 int main(void) {
 
-    int flagmenu = 0, flagcadastro = 0;
+    int flagmenu = 0, i;
 
     while(1){
 
@@ -430,18 +452,15 @@ int main(void) {
                 CLEAR;
                 switch(menu2()){
 					case 1:
-						flagcadastro = 1;
-						CadastroAll(flagcadastro);
+						CadastroAll(1);
 						flagmenu = 0;
 						break;
 					case 2:
-						flagcadastro = 2;
-						CadastroAll(flagcadastro);
+						CadastroAll(2);
 						flagmenu = 0;
 						break;
 					case 3:
-						flagcadastro = 3;
-						CadastroAll(flagcadastro);
+						CadastroAll(3);
 						flagmenu = 0;
 						break;
 					case 4:
@@ -470,6 +489,13 @@ int main(void) {
         if(flagmenu)
             break;
     }
-	
+
+	for(i = 0; i < 2; i++){
+		printf("pavimento: %d\n", imovel[i].casa.pavimentos);
+		printf("quartos: %d\n", imovel[i].casa.quartos);
+		printf("area terreno: %f\n", imovel[i].casa.areaTerreno);
+		printf("area construida: %f\n", imovel[i].casa.areaConst);
+	}
+
 	return 0;
 }
