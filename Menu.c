@@ -203,7 +203,7 @@ int menu1(){//Menu de inicio do programa
 	}
 }
 
-int menu2(){//menu apos o usario selecionar a opção cadastrar
+int menu2(){//menu apos o usario selecionar a opcao cadastrar
 
 	int tecla, posicao = 1;
 

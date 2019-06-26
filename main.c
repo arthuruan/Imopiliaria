@@ -49,6 +49,50 @@ typedef struct Cadastro{
 
 t_cadastro imovel[100];
 
+//Salva as informacoes do imovel no vetor imovel e faz um arquivo .txt
+void salvaArquivoImovel(int flag) {
+	FILE* arquivo;
+	int i;
+
+	arquivo = fopen("dadosImovel.txt", "w");
+	if (arquivo <= 0) {
+		puts("!!!Erro ao abrir o arquivo!!!");
+		return;
+	}
+
+	for (i = 0; i < 100; i++) {
+		if (imovel[i].cidade[0] != 0) {//informacoes do cadastro
+			fprintf(arquivo, "%s\n", imovel[i].cidade);
+			fprintf(arquivo, "%s\n", imovel[i].bairro);
+			fprintf(arquivo, "%s\n", imovel[i].endereco);
+			fprintf(arquivo, "%s\n", imovel[i].cep);
+			fprintf(arquivo, "%f\n", imovel[i].valor);
+			fprintf(arquivo, "%s\n", imovel[i].disponivel);
+			fprintf(arquivo, "%s\n", imovel[i].titulo);
+
+			if (flag == 1) {//informacoes da casa
+				fprintf(arquivo, "%d\n", imovel[i].casa.pavimentos);
+				fprintf(arquivo, "%d\n", imovel[i].casa.quartos);
+				fprintf(arquivo, "%f\n", imovel[i].casa.areaTerreno);
+				fprintf(arquivo, "%f\n", imovel[i].casa.areaConst);
+			}
+			else if (flag == 2) {//informacoes do apartamento
+				fprintf(arquivo, "%s\n", imovel[i].apartamento.posicao);
+				fprintf(arquivo, "%d\n", imovel[i].apartamento.quartos);
+				fprintf(arquivo, "%f\n", imovel[i].apartamento.area);
+				fprintf(arquivo, "%d\n", imovel[i].apartamento.andar);
+				fprintf(arquivo, "%f\n", imovel[i].apartamento.valorCond);
+				fprintf(arquivo, "%d\n", imovel[i].apartamento.garagem);
+			}
+			else if (flag == 3) {//informacoes do terreno
+				fprintf(arquivo, "%f\n", imovel[i].terreno.area);
+			}
+		}
+	}
+
+	fclose(arquivo);
+}
+
 int menu1() {//Menu de inicio do programa
 
 	int tecla, posicao = 1;
@@ -330,6 +374,47 @@ int menu2() {//menu apos o usario selecionar a opção cadastrar
 	}
 }
 
+//menu para salvar as informacoes no arquivo
+int menu3(int flag){
+    int tecla, posicao = 1;
+
+	while (1){
+
+		CLEAR;
+
+		if (posicao == 1){
+			printf("\n\tDeseja salvar as informacoes?\n\n");
+			printf("\t%sSim\n", ">>");
+			printf("Nao\n");
+
+			tecla = getch();
+
+			if (tecla == ENTER){
+                salvaArquivoImovel(flag);
+				return 1;
+			}
+			else if (tecla == SETA_BAIXO)
+				posicao = 2;
+			else if (tecla == SETA_CIMA)
+				posicao = 1;
+		}
+		else if (posicao == 2){
+			printf("\n\tDeseja salvar as informacoes?\n\n");
+			printf("Sim\n");
+			printf("\t%sNao\n", ">>");
+
+			tecla = getch();
+
+			if (tecla == ENTER)
+				return 1;
+			else if (tecla == SETA_BAIXO)
+				posicao = 1;
+			else if (tecla == SETA_CIMA)
+				posicao = 2;
+		}
+	}
+}
+
 void CadastroAll(int flag){
 
 	static int i;
@@ -465,49 +550,7 @@ void Exibe(int flag){//em teste
 	system("pause");
 }
 
-//Salva as informacoes do imovel no vetor imovel e faz um arquivo .txt
-void salvaArquivoImovel(int flag) {
-	FILE* arquivo;
-	int i;
 
-	arquivo = fopen("dadosImovel.txt", "w");
-	if (arquivo <= 0) {
-		puts("!!!Erro ao abrir o arquivo!!!");
-		return;
-	}
-
-	for (i = 0; i < 100; i++) {
-		if (imovel[i].cidade != 0) {//informacoes do cadastro
-			fprintf(arquivo, "%s\n", imovel[i].cidade);
-			fprintf(arquivo, "%s\n", imovel[i].bairro);
-			fprintf(arquivo, "%s\n", imovel[i].endereco);
-			fprintf(arquivo, "%s\n", imovel[i].cep);
-			fprintf(arquivo, "%f\n", imovel[i].valor);
-			fprintf(arquivo, "%s\n", imovel[i].disponivel);
-			fprintf(arquivo, "%s\n", imovel[i].titulo);
-
-			if (flag == 1) {//informacoes da casa
-				fprintf(arquivo, "%d\n", imovel[i].casa.pavimentos);
-				fprintf(arquivo, "%d\n", imovel[i].casa.quartos);
-				fprintf(arquivo, "%f\n", imovel[i].casa.areaTerreno);
-				fprintf(arquivo, "%f\n", imovel[i].casa.areaConst);
-			}
-			else if (flag == 2) {//informacoes do apartamento
-				fprintf(arquivo, "%s\n", imovel[i].apartamento.posicao);
-				fprintf(arquivo, "%d\n", imovel[i].apartamento.quartos);
-				fprintf(arquivo, "%f\n", imovel[i].apartamento.area);
-				fprintf(arquivo, "%d\n", imovel[i].apartamento.andar);
-				fprintf(arquivo, "%f\n", imovel[i].apartamento.valorCond);
-				fprintf(arquivo, "%d\n", imovel[i].apartamento.garagem);
-			}
-			else if (flag == 3) {//informacoes do terreno
-				fprintf(arquivo, "%f\n", imovel[i].terreno.area);
-			}
-		}
-	}
-
-	fclose(arquivo);
-}
 int main(void) {
 
     int flagmenu = 0;
@@ -521,14 +564,17 @@ int main(void) {
                 switch(menu2()){
 					case 1:
 						CadastroAll(1);
+						menu3(1);
 						flagmenu = 0;
 						break;
 					case 2:
 						CadastroAll(2);
+						menu3(2);
 						flagmenu = 0;
 						break;
 					case 3:
 						CadastroAll(3);
+						menu3(3);
 						flagmenu = 0;
 						break;
 					case 4:
