@@ -346,7 +346,7 @@ void CadastroAll(int flag){
         }
 
 		CLEAR;
-		
+
         printf("Digite a cidade do seu imovel : ");
         fgets(imovel[posVaga].cidade,100,stdin);
         imovel[posVaga].cidade[strlen(imovel[posVaga].cidade)-1] = '\0';
@@ -428,7 +428,7 @@ void CadastroAll(int flag){
 	}
 }
 
-void ExibeAll(){//em teste
+void Exibe(int flag){//em teste
 
 	CLEAR;
 
@@ -436,21 +436,78 @@ void ExibeAll(){//em teste
 
 		if(imovel[i].titulo[0] != 0){
 
-			printf("cidade: %s\n", imovel[i].cidade);
-			printf("endereco: %s\n", imovel[i].endereco);
+			printf("Cidade: %s\n", imovel[i].cidade);
+			printf("Endereco: %s\n", imovel[i].endereco);
 			printf("CEP: %s\n", imovel[i].cep);
-			printf("valor: %.1f\n", imovel[i].valor);
-			printf("disponivel: %s\n", imovel[i].disponivel);
-			printf("titulo: %s\n", imovel[i].titulo);
-			printf("pavimentos: %d\n", imovel[i].casa.pavimentos);
-			printf("quartos: %d\n", imovel[i].casa.quartos);
-			printf("Area do terreno: %.1f\n", imovel[i].casa.areaTerreno);
-			printf("Area construida: %.1f\n\n\n", imovel[i].casa.areaConst);
+			printf("Valor: %.1f\n", imovel[i].valor);
+			printf("Disponivel: %s\n", imovel[i].disponivel);
+			printf("Titulo: %s\n", imovel[i].titulo);
+
+			if(flag == 1){
+				printf("Pavimentos : %d\n", imovel[i].casa.pavimentos);
+				printf("Quartos : %d\n", imovel[i].casa.quartos);
+				printf("Area do terreno : %.1f\n", imovel[i].casa.areaTerreno);
+				printf("Area construida : %.1f\n\n\n", imovel[i].casa.areaConst);
+			}
+			else if(flag == 2){
+				printf("Posicao : %s", imovel[i].apartamento.posicao);
+				printf("Quartos : %d", imovel[i].apartamento.quartos);
+				printf("Area : %f", imovel[i].apartamento.area);
+				printf("Andar : %d", imovel[i].apartamento.andar);
+				printf("Valor do condominio : %f", imovel[i].apartamento.valorCond);
+				printf("Garagem : %d", imovel[i].apartamento.garagem);
+			}
+			else if(flag ==3){
+				printf("Area do terreno : %f", imovel[i].terreno.area);
+			}
 		}
 	}
 	system("pause");
 }
 
+//Salva as informacoes do imovel no vetor imovel e faz um arquivo .txt
+void salvaArquivoImovel(int flag) {
+	FILE* arquivo;
+	int i;
+
+	arquivo = fopen("dadosImovel.txt", "w");
+	if (arquivo <= 0) {
+		puts("!!!Erro ao abrir o arquivo!!!");
+		return;
+	}
+
+	for (i = 0; i < 100; i++) {
+		if (imovel[i].cidade != 0) {//informacoes do cadastro
+			fprintf(arquivo, "%s\n", imovel[i].cidade);
+			fprintf(arquivo, "%s\n", imovel[i].bairro);
+			fprintf(arquivo, "%s\n", imovel[i].endereco);
+			fprintf(arquivo, "%s\n", imovel[i].cep);
+			fprintf(arquivo, "%f\n", imovel[i].valor);
+			fprintf(arquivo, "%s\n", imovel[i].disponivel);
+			fprintf(arquivo, "%s\n", imovel[i].titulo);
+
+			if (flag == 1) {//informacoes da casa
+				fprintf(arquivo, "%d\n", imovel[i].casa.pavimentos);
+				fprintf(arquivo, "%d\n", imovel[i].casa.quartos);
+				fprintf(arquivo, "%f\n", imovel[i].casa.areaTerreno);
+				fprintf(arquivo, "%f\n", imovel[i].casa.areaConst);
+			}
+			else if (flag == 2) {//informacoes do apartamento
+				fprintf(arquivo, "%s\n", imovel[i].apartamento.posicao);
+				fprintf(arquivo, "%d\n", imovel[i].apartamento.quartos);
+				fprintf(arquivo, "%f\n", imovel[i].apartamento.area);
+				fprintf(arquivo, "%d\n", imovel[i].apartamento.andar);
+				fprintf(arquivo, "%f\n", imovel[i].apartamento.valorCond);
+				fprintf(arquivo, "%d\n", imovel[i].apartamento.garagem);
+			}
+			else if (flag == 3) {//informacoes do terreno
+				fprintf(arquivo, "%f\n", imovel[i].terreno.area);
+			}
+		}
+	}
+
+	fclose(arquivo);
+}
 int main(void) {
 
     int flagmenu = 0;
@@ -478,10 +535,26 @@ int main(void) {
 						flagmenu = 0;
 						break;
 				}
-                break;
+				break;
             case 2:
-				ExibeAll();
-                break;
+				switch (menu2()){
+					case 1:
+						Exibe(1);
+						flagmenu = 0;
+						break;
+					case 2:
+						Exibe(2);
+						flagmenu = 0;
+						break;
+					case 3:
+						Exibe(3);
+						flagmenu = 0;
+						break;
+					case 4:
+						flagmenu = 0;
+						break;
+				}
+				break;
 			case 3:
 				break;
 			case 4:
