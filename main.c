@@ -332,9 +332,16 @@ int menu2() {//menu apos o usario selecionar a opção cadastrar
 
 void CadastroAll(int flag){
 
-	int i;
+	static int i;
 
     while(1){
+		int posVaga = -1;
+     	for(i = 0; i<100; i++){
+        	if(imovel[i].titulo[0] == 0){
+            	posVaga = i;
+            	break;
+        	}
+     	}
 
 		CLEAR;
         printf("Digite a cidade do seu imovel : ");
@@ -419,27 +426,22 @@ void CadastroAll(int flag){
 	}
 }
 
-void ExibiAll(){//em teste
+void ExibeAll(){//em teste
 
 	CLEAR;
+	for(int i=0;i<100;i++){
 
-	for(int i = 0; i<3; i++){
-        //if(imovel[i].titulo[0] != 0)
-			printf("cidade: %s\n", imovel[i].cidade);
-			printf("endereco: %s\n", imovel[i].endereco);
-			printf("CEP: %s\n", imovel[i].cep);
-			printf("valor: %.1f\n", imovel[i].valor);
-			printf("disponivel: %s\n", imovel[i].disponivel);
-			printf("titulo: %s\n", imovel[i].titulo);
-			printf("pavimentos: %d\n", imovel[i].casa.pavimentos);
-			printf("quartos: %d\n", imovel[i].casa.quartos);
-			printf("Area do terreno: %.1f\n", imovel[i].casa.areaTerreno);
-			printf("Area construida: %.1f\n\n\n", imovel[i].casa.areaConst);
-			//getchar();
-        }		
-		//else break;
+		printf("cidade: %s\n", imovel[i].cidade);
+		printf("endereco: %s\n", imovel[i].endereco);
+		printf("CEP: %s\n", imovel[i].cep);
+		printf("valor: %.1f\n", imovel[i].valor);
+		printf("disponivel: %s\n", imovel[i].disponivel);
+		printf("titulo: %s\n", imovel[i].titulo);
+		printf("pavimentos: %d\n", imovel[i].casa.pavimentos);
+		printf("quartos: %d\n", imovel[i].casa.quartos);
+		printf("Area do terreno: %.1f\n", imovel[i].casa.areaTerreno);
+		printf("Area construida: %.1f\n\n\n", imovel[i].casa.areaConst);
 	}
-
 	system("pause");
 }
 
