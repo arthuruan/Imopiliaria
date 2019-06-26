@@ -335,92 +335,94 @@ void CadastroAll(int flag){
 	static int i;
 
     while(1){
+		
 		int posVaga = -1;
-     	for(i = 0; i<100; i++){
-        	if(imovel[i].titulo[0] == 0){
-            	posVaga = i;
-            	break;
-        	}
-     	}
+      	
+		for(i = 0; i<100; i++){
+			if(imovel[i].titulo[0] == 0){
+				posVaga = i;
+				break;
+			}
+        }
 
 		CLEAR;
+		
         printf("Digite a cidade do seu imovel : ");
-        fgets(imovel[i].cidade,100,stdin);
-        imovel[i].cidade[strlen(imovel[i].cidade)-1] = '\0';
+        fgets(imovel[posVaga].cidade,100,stdin);
+        imovel[posVaga].cidade[strlen(imovel[posVaga].cidade)-1] = '\0';
 
         printf("Digite o endereco do seu imovel : ");
-        fgets(imovel[i].endereco,100,stdin);
-        imovel[i].endereco [strlen(imovel[i].endereco)-1] = '\0';
+        fgets(imovel[posVaga].endereco,100,stdin);
+        imovel[posVaga].endereco [strlen(imovel[posVaga].endereco)-1] = '\0';
 
         printf("Digite o CEP do seu imovel : ");
-        fgets(imovel[i].cep,15,stdin);
-        imovel[i].cep [strlen(imovel[i].cep)-1] = '\0';
+        fgets(imovel[posVaga].cep,15,stdin);
+        imovel[posVaga].cep [strlen(imovel[posVaga].cep)-1] = '\0';
 
         printf("Digite o valor do seu imovel : ");
-        scanf("%f", &imovel[i].valor);
+        scanf("%f", &imovel[posVaga].valor);
         FLUSH;
 
         printf("Digite a disponibilidade do seu imovel (Aluguel ou Venda) : ");
-        fgets(imovel[i].disponivel,10,stdin);
-        imovel[i].disponivel [strlen(imovel[i].disponivel)-1] = '\0';
+        fgets(imovel[posVaga].disponivel,10,stdin);
+        imovel[posVaga].disponivel [strlen(imovel[posVaga].disponivel)-1] = '\0';
 
         printf("Digite ao titulo de venda do seu imovel : ");
-        fgets(imovel[i].titulo,100,stdin);
-        imovel[i].titulo [strlen(imovel[i].titulo)-1] = '\0';
+        fgets(imovel[posVaga].titulo,100,stdin);
+        imovel[posVaga].titulo [strlen(imovel[posVaga].titulo)-1] = '\0';
 
         if(flag == 1){
             printf("Digite a quantidade de pavimentos da casa : ");
-            scanf("%d", &imovel[i].casa.pavimentos);
+            scanf("%d", &imovel[posVaga].casa.pavimentos);
             FLUSH;
 
             printf("Digite a quantidade de quartos da casa : ");
-            scanf("%d", &imovel[i].casa.quartos);
+            scanf("%d", &imovel[posVaga].casa.quartos);
             FLUSH;
 
             printf("Digite a area total do terreno (em metros quadrados) : ");
-            scanf("%f", &imovel[i].casa.areaTerreno);
+            scanf("%f", &imovel[posVaga].casa.areaTerreno);
             FLUSH;
 
             printf("Digite a area construida (em metros quadrados) : ");
-            scanf("%f", &imovel[i].casa.areaConst);
+            scanf("%f", &imovel[posVaga].casa.areaConst);
             FLUSH;
 
 			break;
 
         }else if(flag == 2){
-            
+
             printf("Digite a posicao do apartamento : ");
-            fgets(imovel[i].apartamento.posicao,100,stdin);
-            imovel[i].apartamento.posicao [strlen(imovel[i].apartamento.posicao)-1] = '\0';
+            fgets(imovel[posVaga].apartamento.posicao,100,stdin);
+            imovel[posVaga].apartamento.posicao [strlen(imovel[posVaga].apartamento.posicao)-1] = '\0';
 
             printf("Digite a quantidade de quartos do apartamento : ");
-            scanf("%d", &imovel[i].apartamento.quartos);
+            scanf("%d", &imovel[posVaga].apartamento.quartos);
             FLUSH;
 
             printf("Digite a area total do apartamento(em metros quadrados) : ");
-            scanf("%f", &imovel[i].apartamento.area);
+            scanf("%f", &imovel[posVaga].apartamento.area);
             FLUSH;
 
             printf("Digite o andar do apartamento : ");
-            scanf("%d", &imovel[i].apartamento.andar);
+            scanf("%d", &imovel[posVaga].apartamento.andar);
             FLUSH;
 
             printf("Digite o valor do condominio : ");
-            scanf("%f", &imovel[i].apartamento.valorCond);
+            scanf("%f", &imovel[posVaga].apartamento.valorCond);
 
             printf("Digite o numero de vagas de garagem : ");
-            scanf("%d", &imovel[i].apartamento.garagem);
+            scanf("%d", &imovel[posVaga].apartamento.garagem);
             FLUSH;
 
             break;
 
         }else if(flag == 3){
             printf("Digite a area do terreno (em metros quadrados) : ");
-            scanf("%f", &imovel[i].terreno.area);
+            scanf("%f", &imovel[posVaga].terreno.area);
             FLUSH;
 
 			break;
-
         }
         i++;
 	}
