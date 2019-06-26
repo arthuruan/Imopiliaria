@@ -332,16 +332,9 @@ int menu2() {//menu apos o usario selecionar a opção cadastrar
 
 void CadastroAll(int flag){
 
-	int i = 0, confirma;
+	int i;
 
     while(1){
-		int posVaga = -1;
-     	for(i = 0; i<100; i++){
-        	if(imovel[i].titulo[0] == 0){
-            	posVaga = i;
-            	break;
-        	}
-     	}
 
 		CLEAR;
         printf("Digite a cidade do seu imovel : ");
@@ -423,26 +416,36 @@ void CadastroAll(int flag){
 
         }
         i++;
-	printf("Deseja confirmar o cadastro : (s ou n):");
-	scanf("%c", &confirma);
-	if(confirma == 's'){
-
-
-
-
-
-
 	}
-	
-	
-	
-	
+}
+
+void ExibiAll(){//em teste
+
+	CLEAR;
+
+	for(int i = 0; i<3; i++){
+        //if(imovel[i].titulo[0] != 0)
+			printf("cidade: %s\n", imovel[i].cidade);
+			printf("endereco: %s\n", imovel[i].endereco);
+			printf("CEP: %s\n", imovel[i].cep);
+			printf("valor: %.1f\n", imovel[i].valor);
+			printf("disponivel: %s\n", imovel[i].disponivel);
+			printf("titulo: %s\n", imovel[i].titulo);
+			printf("pavimentos: %d\n", imovel[i].casa.pavimentos);
+			printf("quartos: %d\n", imovel[i].casa.quartos);
+			printf("Area do terreno: %.1f\n", imovel[i].casa.areaTerreno);
+			printf("Area construida: %.1f\n\n\n", imovel[i].casa.areaConst);
+			//getchar();
+        }		
+		//else break;
 	}
+
+	system("pause");
 }
 
 int main(void) {
 
-    int flagmenu = 0, i;
+    int flagmenu = 0;
 
     while(1){
 
@@ -471,6 +474,7 @@ int main(void) {
             case 2:
                 break;
 			case 3:
+				ExibiAll();
 				break;
 			case 4:
 				break;
@@ -489,13 +493,6 @@ int main(void) {
         if(flagmenu)
             break;
     }
-
-	for(i = 0; i < 2; i++){
-		printf("pavimento: %d\n", imovel[i].casa.pavimentos);
-		printf("quartos: %d\n", imovel[i].casa.quartos);
-		printf("area terreno: %f\n", imovel[i].casa.areaTerreno);
-		printf("area construida: %f\n", imovel[i].casa.areaConst);
-	}
 
 	return 0;
 }
