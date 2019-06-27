@@ -448,7 +448,7 @@ int menu4(){
 				posicao = 2;
 		}
 		else if (posicao == 4){
-				printf("\n\tEscolha uma opcao:\n\n");
+			printf("\n\tEscolha uma opcao:\n\n");
 			printf("Titulo\n");
 			printf("Bairro\n");
 			printf("Valor\n");
@@ -564,7 +564,7 @@ void CadastroAll(int flag){
 	}
 }
 
-void ExibeAll(int flag){//em teste
+void Exibe(int flag){//em teste
 
 	CLEAR;
     int i;
@@ -573,31 +573,42 @@ void ExibeAll(int flag){//em teste
 
 		if(imovel[i].titulo[0] != 0){
 
-			printf("Cidade: %s\n", imovel[i].cidade);
-			printf("Endereco: %s\n", imovel[i].endereco);
-			printf("CEP: %s\n", imovel[i].cep);
-			printf("Valor: %.1f\n", imovel[i].valor);
-			printf("Disponibilidade: %s\n", imovel[i].disponivel);
-			printf("Titulo de venda: %s\n", imovel[i].titulo);
-
 			if(flag == 1){
+				//print das informações da casa
+				printf("Cidade: %s\n", imovel[i].cidade);
+				printf("Endereco: %s\n", imovel[i].endereco);
+				printf("CEP: %s\n", imovel[i].cep);
+				printf("Valor: %.1f\n", imovel[i].valor);
+				printf("Disponivel: %s\n", imovel[i].disponivel);
+				printf("Titulo: %s\n", imovel[i].titulo);
 				printf("Pavimentos : %d\n", imovel[i].casa.pavimentos);
 				printf("Quartos : %d\n", imovel[i].casa.quartos);
 				printf("Area do terreno : %.1f\n", imovel[i].casa.areaTerreno);
 				printf("Area construida : %.1f\n\n\n", imovel[i].casa.areaConst);
-			}
-			else if(flag == 2){
+			}else if(flag == 2){
+				//print das informações do apartamento
+				printf("Cidade: %s\n", imovel[i].cidade);
+				printf("Endereco: %s\n", imovel[i].endereco);
+				printf("CEP: %s\n", imovel[i].cep);
+				printf("Valor: %.1f\n", imovel[i].valor);
+				printf("Disponivel: %s\n", imovel[i].disponivel);
+				printf("Titulo: %s\n", imovel[i].titulo);
 				printf("Posicao : %s\n", imovel[i].apartamento.posicao);
 				printf("Quartos : %d\n", imovel[i].apartamento.quartos);
 				printf("Area : %f\n", imovel[i].apartamento.area);
 				printf("Andar : %d\n", imovel[i].apartamento.andar);
 				printf("Valor do condominio : %f\n", imovel[i].apartamento.valorCond);
 				printf("Garagem : %d\n\n\n", imovel[i].apartamento.garagem);
-			}
-			else if(flag ==3){
+			}else if(flag ==3){
+				//print das informações do terreno
+				printf("Cidade: %s\n", imovel[i].cidade);
+				printf("Endereco: %s\n", imovel[i].endereco);
+				printf("CEP: %s\n", imovel[i].cep);
+				printf("Valor: %.1f\n", imovel[i].valor);
+				printf("Disponivel: %s\n", imovel[i].disponivel);
+				printf("Titulo: %s\n", imovel[i].titulo);
 				printf("Area do terreno : %f\n\n\n", imovel[i].terreno.area);
 			}
-            printf("\n");
 		}
 	}
 	system("pause");
@@ -633,7 +644,23 @@ int main(void) {
 				}
                 break;
             case 2:
-				ExibeAll(flaglobal);
+				switch (menu2()){
+					case 1:
+						Exibe(1);
+						flagmenu = 0;
+						break;
+					case 2:
+						Exibe(2);
+						flagmenu = 0;
+						break;
+					case 3:
+						Exibe(3);
+						flagmenu = 0;
+						break;
+					case 4:
+						flagmenu = 0;
+						break;
+				}
                 break;
 			case 3:
 				switch (menu4()){
