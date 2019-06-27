@@ -64,39 +64,37 @@ void BuscaTitulo(int flaglobal){
         if(!strncmp(imovel[i].titulo, stringtitulo, strlen(stringtitulo))){
 
             if(flaglobal == 1 && imovel[i].estado == 1){
-                CLEAR;
-                printf("Cidade: %s\n", imovel[i].cidade);
-                printf("Endereco: %s\n", imovel[i].endereco);
-                printf("CEP: %s\n", imovel[i].cep);
-                printf("Valor: %.1f\n", imovel[i].valor);
-                printf("Disponibilidade: %s\n", imovel[i].disponivel);
-                printf("Titulo de venda: %s\n", imovel[i].titulo);
-                printf("Pavimentos: %d\n", imovel[i].casa.pavimentos);
-                printf("Quartos: %d\n", imovel[i].casa.quartos);
-                printf("Area do terreno: %.1f\n", imovel[i].casa.areaTerreno);
-                printf("Area construida: %.1f\n", imovel[i].casa.areaConst);
+                printf("Cidade : %s\n", imovel[i].cidade);
+                printf("Endereco : %s\n", imovel[i].endereco);
+                printf("CEP : %s\n", imovel[i].cep);
+                printf("Valor : %.1f\n", imovel[i].valor);
+                printf("Disponibilidade : %s\n", imovel[i].disponivel);
+                printf("Titulo do imovel : %s\n", imovel[i].titulo);
+                printf("Pavimentos : %d\n", imovel[i].casa.pavimentos);
+                printf("Quartos : %d\n", imovel[i].casa.quartos);
+                printf("Area do terreno : %.1f\n", imovel[i].casa.areaTerreno);
+                printf("Area construida : %.1f\n\n\n", imovel[i].casa.areaConst);
             }else if(flaglobal == 2 && imovel[i].estado == 2){
-                CLEAR;
-                printf("Cidade: %s\n", imovel[i].cidade);
-                printf("Endereco: %s\n", imovel[i].endereco);
-                printf("CEP: %s\n", imovel[i].cep);
+                printf("Cidade : %s\n", imovel[i].cidade);
+                printf("Endereco : %s\n", imovel[i].endereco);
+                printf("CEP : %s\n", imovel[i].cep);
                 printf("Valor: %.1f\n", imovel[i].valor);
-                printf("Disponibilidade: %s\n", imovel[i].disponivel);
-                printf("Titulo de venda: %s\n", imovel[i].titulo);
+                printf("Disponibilidade  %s\n", imovel[i].disponivel);
+                printf("Titulo do imovel : %s\n", imovel[i].titulo);
                 printf("Posicao : %s\n", imovel[i].apartamento.posicao);
 				printf("Quartos : %d\n", imovel[i].apartamento.quartos);
 				printf("Area : %f\n", imovel[i].apartamento.area);
 				printf("Andar : %d\n", imovel[i].apartamento.andar);
 				printf("Valor do condominio : %f\n", imovel[i].apartamento.valorCond);
-				printf("Garagem : %d\n", imovel[i].apartamento.garagem);
+				printf("Garagem : %d\n\n\n", imovel[i].apartamento.garagem);
             }else if(flaglobal == 3 && imovel[i].estado == 3){
-                printf("Cidade: %s\n", imovel[i].cidade);
-                printf("Endereco: %s\n", imovel[i].endereco);
-                printf("CEP: %s\n", imovel[i].cep);
-                printf("Valor: %.1f\n", imovel[i].valor);
-                printf("Disponibilidade: %s\n", imovel[i].disponivel);
-                printf("Titulo de venda: %s\n", imovel[i].titulo);
-                printf("Area do terreno : %f\n", imovel[i].terreno.area);
+                printf("Cidade : %s\n", imovel[i].cidade);
+                printf("Endereco : %s\n", imovel[i].endereco);
+                printf("CEP : %s\n", imovel[i].cep);
+                printf("Valor : %.1f\n", imovel[i].valor);
+                printf("Disponibilidade : %s\n", imovel[i].disponivel);
+                printf("Titulo ddo imovel  : %s\n", imovel[i].titulo);
+                printf("Area do terreno : %f\n\n\n", imovel[i].terreno.area);
             }else{
                 printf("Imovel nao encontrado\n");
             }
@@ -680,12 +678,12 @@ void Exibe(int flag){//Função que exibe imoveis disponiveis
 		if(imovel[i].cidade[0] != 0){
 			if(flag == 1 && imovel[i].estado == 1){
 				//print das informações da casa
-				printf("Cidade: %s\n", imovel[i].cidade);
-				printf("Endereco: %s\n", imovel[i].endereco);
-				printf("CEP: %s\n", imovel[i].cep);
-				printf("Valor: %.1f\n", imovel[i].valor);
-				printf("Disponivel: %s\n", imovel[i].disponivel);
-				printf("Titulo: %s\n", imovel[i].titulo);
+				printf("Cidade : %s\n", imovel[i].cidade);
+				printf("Endereco : %s\n", imovel[i].endereco);
+				printf("CEP : %s\n", imovel[i].cep);
+				printf("Valor : %.1f\n", imovel[i].valor);
+				printf("Disponibilidade : %s\n", imovel[i].disponivel);
+				printf("Titulo do imovel : %s\n", imovel[i].titulo);
 				printf("Pavimentos : %d\n", imovel[i].casa.pavimentos);
 				printf("Quartos : %d\n", imovel[i].casa.quartos);
 				printf("Area do terreno : %.1f\n", imovel[i].casa.areaTerreno);
@@ -696,8 +694,8 @@ void Exibe(int flag){//Função que exibe imoveis disponiveis
 				printf("Endereco: %s\n", imovel[i].endereco);
 				printf("CEP: %s\n", imovel[i].cep);
 				printf("Valor: %.1f\n", imovel[i].valor);
-				printf("Disponivel: %s\n", imovel[i].disponivel);
-				printf("Titulo: %s\n", imovel[i].titulo);
+				printf("Disponibilidade : %s\n", imovel[i].disponivel);
+				printf("Titulo do imovel : %s\n", imovel[i].titulo);
 				printf("Posicao : %s\n", imovel[i].apartamento.posicao);
 				printf("Quartos : %d\n", imovel[i].apartamento.quartos);
 				printf("Area : %f\n", imovel[i].apartamento.area);
@@ -706,15 +704,15 @@ void Exibe(int flag){//Função que exibe imoveis disponiveis
 				printf("Garagem : %d\n\n\n", imovel[i].apartamento.garagem);
 			}else if(flag == 3 && imovel[i].estado == 3){
 				//print das informações do terreno
-				printf("Cidade: %s\n", imovel[i].cidade);
-				printf("Endereco: %s\n", imovel[i].endereco);
+				printf("Cidade : %s\n", imovel[i].cidade);
+				printf("Endereco : %s\n", imovel[i].endereco);
 				printf("CEP: %s\n", imovel[i].cep);
-				printf("Valor: %.1f\n", imovel[i].valor);
-				printf("Disponivel: %s\n", imovel[i].disponivel);
-				printf("Titulo: %s\n", imovel[i].titulo);
+				printf("Valor : %.1f\n", imovel[i].valor);
+				printf("Disponibilidade : %s\n", imovel[i].disponivel);
+				printf("Titulo do imovel : %s\n", imovel[i].titulo);
 				printf("Area do terreno : %f\n\n\n", imovel[i].terreno.area);
 			}else{
-				printf("Imovel nao encontrado");
+				printf("Imovel nao encontrado\n");
 			}
 		}
 	}
