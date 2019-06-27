@@ -764,14 +764,17 @@ int main(void) {
                 switch(flaglobal){
 					case 1:
 						CadastroAll(flaglobal);
+						menu3(flaglobal);
 						flagmenu = 0;
 						break;
 					case 2:
 						CadastroAll(flaglobal);
+						menu3(flaglobal);
 						flagmenu = 0;
 						break;
 					case 3:
 						CadastroAll(flaglobal);
+						menu3(flaglobal);
 						flagmenu = 0;
 						break;
 					case 4:
