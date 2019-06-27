@@ -175,7 +175,7 @@ int menu1() {//Menu de inicio do programa
 			else if (tecla == SETA_BAIXO)
 				posicao = 2;
 			else if (tecla == SETA_CIMA)
-				posicao = 9;
+				posicao = 8;
 		}
 		else if (posicao == 2) {
 			printf("\n\tEscolha uma opcao:\n\n");
@@ -803,8 +803,6 @@ int main(void) {
 			case 7:
 				break;
 			case 8:
-				break;
-			case 9:
 				flagmenu = 1;
 				break;
         }
