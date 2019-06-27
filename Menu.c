@@ -319,3 +319,81 @@ int menu3(int flag){
 		}
 	}
 }
+
+int menu4(){
+
+	int tecla, posicao = 1;
+
+	while (1){
+
+		CLEAR;
+
+		if (posicao == 1){
+			printf("\n\tEscolha uma opcao:\n\n");
+			printf("\t%sTitulo\n", ">>");
+			printf("Bairro\n");
+			printf("Valor\n");
+			printf("Voltar\n");
+
+			tecla = getch();
+
+			if (tecla == ENTER)
+				return 1;
+			else if (tecla == SETA_BAIXO)
+				posicao = 2;
+			else if (tecla == SETA_CIMA)
+				posicao = 3;
+		}
+		else if (posicao == 2){
+			printf("\n\tEscolha uma opcao:\n\n");
+			printf("Titulo\n");
+			printf("\t%sBairro\n", ">>");
+			printf("Valor\n");
+			printf("Voltar\n");
+
+			tecla = getch();
+
+			if (tecla == ENTER)
+				return 2;
+			else if (tecla == SETA_BAIXO)
+				posicao = 3;
+			else if (tecla == SETA_CIMA)
+				posicao = 1;
+		}
+		else if (posicao == 3){
+
+			printf("\n\tEscolha uma opcao:\n\n");
+			printf("Titulo\n");
+			printf("Bairro\n");
+			printf("\t%sValor\n", ">>");
+			printf("Voltar\n");
+
+			tecla = getch();
+
+			if (tecla == ENTER)
+				return 3;
+
+			else if (tecla == SETA_BAIXO)
+				posicao = 4;
+
+			else if (tecla == SETA_CIMA)
+				posicao = 2;
+		}
+		else if (posicao == 4){
+				printf("\n\tEscolha uma opcao:\n\n");
+			printf("Titulo\n");
+			printf("Bairro\n");
+			printf("Valor\n");
+			printf("\t%sVoltar\n", ">>");
+
+				tecla = getch();
+
+				if (tecla == ENTER)
+					return 4;
+				else if (tecla == SETA_BAIXO)
+					posicao = 1;
+				else if (tecla == SETA_CIMA)
+					posicao = 3;
+		}
+	}
+}

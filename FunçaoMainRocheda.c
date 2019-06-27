@@ -24,14 +24,14 @@ typedef struct apartamento{
 }t_apartamento;
 
 typedef struct terreno{
-    float area; //area total do terreno em m²
+    float area; //area total do terreno em m�
 }t_terreno;
 
 typedef struct casa{
     int pavimentos; //andares da casa
     int quartos; //quartos na casa
-    float areaTerreno; //area do terreno em metros²
-    float areaConst; //area construída
+    float areaTerreno; //area do terreno em metros�
+    float areaConst; //area constru�da
 }t_casa;
 
 typedef struct Cadastro{
@@ -49,68 +49,6 @@ typedef struct Cadastro{
 
 t_cadastro imovel[100];
 
-void BuscaBairro(int flaglobal){
-    CLEAR;
-    char stringbairro[50];//variavel para busca de bairros
-    int flag, i;
-
-    printf("Digite o titulo do imovel desejado: ");
-    fgets(stringbairro,50,stdin);
-    stringbairro[strlen(stringbairro)-1] = '\0';
-
-    for(i=0;i<100;i++){
-        if(!strncmp(imovel[i].titulo, stringbairro, strlen(stringbairro))){
-            if(flaglobal == 1){
-                CLEAR;
-                printf("Cidade: %s\n", imovel[i].cidade);
-                printf("Endereco: %s\n", imovel[i].endereco);
-                printf("Bairro: %s\n", imovel[i].bairro);
-                printf("CEP: %s\n", imovel[i].cep);
-                printf("Valor: %.1f\n", imovel[i].valor);
-                printf("Disponibilidade: %s\n", imovel[i].disponivel);
-                printf("Titulo de venda: %s\n", imovel[i].titulo);
-                printf("Pavimentos: %d\n", imovel[i].casa.pavimentos);
-                printf("Quartos: %d\n", imovel[i].casa.quartos);
-                printf("Area do terreno: %.1f\n", imovel[i].casa.areaTerreno);
-                printf("Area construida: %.1f\n", imovel[i].casa.areaConst);
-                printf("Posicao de cadastro do imovel: %d\n", i);
-            }else if(flaglobal == 2){
-                CLEAR;
-                printf("Cidade: %s\n", imovel[i].cidade);
-                printf("Endereco: %s\n", imovel[i].endereco);
-                printf("Bairro: %s\n", imovel[i].bairro);
-                printf("CEP: %s\n", imovel[i].cep);
-                printf("Valor: %.1f\n", imovel[i].valor);
-                printf("Disponibilidade: %s\n", imovel[i].disponivel);
-                printf("Titulo de venda: %s\n", imovel[i].titulo);
-                printf("Posicao : %s\n", imovel[i].apartamento.posicao);
-				printf("Quartos : %d\n", imovel[i].apartamento.quartos);
-				printf("Area : %f\n", imovel[i].apartamento.area);
-				printf("Andar : %d\n", imovel[i].apartamento.andar);
-				printf("Valor do condominio : %f\n", imovel[i].apartamento.valorCond);
-				printf("Garagem : %d\n", imovel[i].apartamento.garagem);
-
-            }else if(flaglobal == 3){
-                printf("Cidade: %s\n", imovel[i].cidade);
-                printf("Endereco: %s\n", imovel[i].endereco);
-                printf("Bairro: %s\n", imovel[i].bairro);
-                printf("CEP: %s\n", imovel[i].cep);
-                printf("Valor: %.1f\n", imovel[i].valor);
-                printf("Disponibilidade: %s\n", imovel[i].disponivel);
-                printf("Titulo de venda: %s\n", imovel[i].titulo);
-                printf("Area do terreno : %f\n", imovel[i].terreno.area);
-            }else{
-                printf("Imovel nao encontrado\n");
-            }
-        }
-
-    }
-
-}
-
-
-
-
 void BuscaTitulo(int flaglobal){
 
     CLEAR;
@@ -127,7 +65,6 @@ void BuscaTitulo(int flaglobal){
                 CLEAR;
                 printf("Cidade: %s\n", imovel[i].cidade);
                 printf("Endereco: %s\n", imovel[i].endereco);
-                printf("Bairro: %s\n", imovel[i].bairro);
                 printf("CEP: %s\n", imovel[i].cep);
                 printf("Valor: %.1f\n", imovel[i].valor);
                 printf("Disponibilidade: %s\n", imovel[i].disponivel);
@@ -141,7 +78,6 @@ void BuscaTitulo(int flaglobal){
                 CLEAR;
                 printf("Cidade: %s\n", imovel[i].cidade);
                 printf("Endereco: %s\n", imovel[i].endereco);
-                printf("Bairro: %s\n", imovel[i].bairro);
                 printf("CEP: %s\n", imovel[i].cep);
                 printf("Valor: %.1f\n", imovel[i].valor);
                 printf("Disponibilidade: %s\n", imovel[i].disponivel);
@@ -155,7 +91,6 @@ void BuscaTitulo(int flaglobal){
             }else if(flaglobal == 3){
                 printf("Cidade: %s\n", imovel[i].cidade);
                 printf("Endereco: %s\n", imovel[i].endereco);
-                printf("Bairro: %s\n", imovel[i].bairro);
                 printf("CEP: %s\n", imovel[i].cep);
                 printf("Valor: %.1f\n", imovel[i].valor);
                 printf("Disponibilidade: %s\n", imovel[i].disponivel);
@@ -372,7 +307,7 @@ int menu1() {//Menu de inicio do programa
 	}
 }
 
-int menu2() {//menu apos o usario selecionar a opção cadastrar
+int menu2() {//menu apos o usario selecionar a op��o cadastrar
 
 	int tecla, posicao = 1;
 
@@ -453,6 +388,84 @@ int menu2() {//menu apos o usario selecionar a opção cadastrar
 	}
 }
 
+int menu4(){
+
+	int tecla, posicao = 1;
+
+	while (1){
+
+		CLEAR;
+
+		if (posicao == 1){
+			printf("\n\tEscolha uma opcao:\n\n");
+			printf("\t%sTitulo\n", ">>");
+			printf("Bairro\n");
+			printf("Valor\n");
+			printf("Voltar\n");
+
+			tecla = getch();
+
+			if (tecla == ENTER)
+				return 1;
+			else if (tecla == SETA_BAIXO)
+				posicao = 2;
+			else if (tecla == SETA_CIMA)
+				posicao = 3;
+		}
+		else if (posicao == 2){
+			printf("\n\tEscolha uma opcao:\n\n");
+			printf("Titulo\n");
+			printf("\t%sBairro\n", ">>");
+			printf("Valor\n");
+			printf("Voltar\n");
+
+			tecla = getch();
+
+			if (tecla == ENTER)
+				return 2;
+			else if (tecla == SETA_BAIXO)
+				posicao = 3;
+			else if (tecla == SETA_CIMA)
+				posicao = 1;
+		}
+		else if (posicao == 3){
+
+			printf("\n\tEscolha uma opcao:\n\n");
+			printf("Titulo\n");
+			printf("Bairro\n");
+			printf("\t%sValor\n", ">>");
+			printf("Voltar\n");
+
+			tecla = getch();
+
+			if (tecla == ENTER)
+				return 3;
+
+			else if (tecla == SETA_BAIXO)
+				posicao = 4;
+
+			else if (tecla == SETA_CIMA)
+				posicao = 2;
+		}
+		else if (posicao == 4){
+				printf("\n\tEscolha uma opcao:\n\n");
+			printf("Titulo\n");
+			printf("Bairro\n");
+			printf("Valor\n");
+			printf("\t%sVoltar\n", ">>");
+
+				tecla = getch();
+
+				if (tecla == ENTER)
+					return 4;
+				else if (tecla == SETA_BAIXO)
+					posicao = 1;
+				else if (tecla == SETA_CIMA)
+					posicao = 3;
+		}
+	}
+}
+
 void CadastroAll(int flag){
 
 	static int i;
@@ -477,10 +490,6 @@ void CadastroAll(int flag){
         printf("Digite o endereco do seu imovel : ");
         fgets(imovel[posVaga].endereco,100,stdin);
         imovel[posVaga].endereco [strlen(imovel[posVaga].endereco)-1] = '\0';
-
-        printf("Digite o bairro do seu imovel ; ");
-        fgets(imovel[posVaga].bairro,100,stdin);
-        imovel[posVaga].bairro [strlen(imovel[posVaga].bairro)-1] = '\0';
 
         printf("Digite o CEP do seu imovel : ");
         fgets(imovel[posVaga].cep,15,stdin);
@@ -566,7 +575,6 @@ void ExibeAll(int flag){//em teste
 
 			printf("Cidade: %s\n", imovel[i].cidade);
 			printf("Endereco: %s\n", imovel[i].endereco);
-			printf("Bairro: %s\n", imovel[i].bairro);
 			printf("CEP: %s\n", imovel[i].cep);
 			printf("Valor: %.1f\n", imovel[i].valor);
 			printf("Disponibilidade: %s\n", imovel[i].disponivel);
@@ -628,7 +636,23 @@ int main(void) {
 				ExibeAll(flaglobal);
                 break;
 			case 3:
-			    BuscaTitulo(flaglobal);
+				switch (menu4()){
+					case 1:
+						BuscaTitulo(flaglobal);
+						flagmenu = 0;
+						break;
+					case 2:
+						BuscaTitulo(flaglobal);
+						flagmenu = 0;
+						break;
+					case 3:
+						BuscaTitulo(flaglobal);
+						flagmenu = 0;
+						break;
+					case 4:
+						flagmenu = 0;
+						break;
+				}
 				break;
 			case 4:
 				break;
