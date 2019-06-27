@@ -63,7 +63,7 @@ void BuscaTitulo(int flaglobal){
     for(i=0;i<100;i++){
         if(!strncmp(imovel[i].titulo, stringtitulo, strlen(stringtitulo))){
 
-            if(flaglobal== 1){
+            if(flaglobal == 1 && imovel[i].estado == 1){
                 CLEAR;
                 printf("Cidade: %s\n", imovel[i].cidade);
                 printf("Endereco: %s\n", imovel[i].endereco);
@@ -75,8 +75,7 @@ void BuscaTitulo(int flaglobal){
                 printf("Quartos: %d\n", imovel[i].casa.quartos);
                 printf("Area do terreno: %.1f\n", imovel[i].casa.areaTerreno);
                 printf("Area construida: %.1f\n", imovel[i].casa.areaConst);
-                printf("Posicao de cadastro do imovel: %d\n", i);
-            }else if(flaglobal == 2){
+            }else if(flaglobal == 2 && imovel[i].estado == 2){
                 CLEAR;
                 printf("Cidade: %s\n", imovel[i].cidade);
                 printf("Endereco: %s\n", imovel[i].endereco);
@@ -90,7 +89,7 @@ void BuscaTitulo(int flaglobal){
 				printf("Andar : %d\n", imovel[i].apartamento.andar);
 				printf("Valor do condominio : %f\n", imovel[i].apartamento.valorCond);
 				printf("Garagem : %d\n", imovel[i].apartamento.garagem);
-            }else if(flaglobal == 3){
+            }else if(flaglobal == 3 && imovel[i].estado == 3){
                 printf("Cidade: %s\n", imovel[i].cidade);
                 printf("Endereco: %s\n", imovel[i].endereco);
                 printf("CEP: %s\n", imovel[i].cep);
@@ -161,14 +160,13 @@ int menu1() {//Menu de inicio do programa
 		CLEAR;
 
 		if (posicao == 1) {
-			printf("\n***Escolha uma opcao:\n\n");
+			printf("\n\tEscolha uma opcao:\n\n");
 			printf("\t%sCadastrar Imovel\n", ">>");
 			printf("Consultar imoveis disponiveis\n");
 			printf("Buscar imoveis\n");
 			printf("Imoveis disponiveis\n");
 			printf("Excluir Imovel\n");
 			printf("Editar imovel\n");
-			printf("Salvar lista\n");
 			printf("Ler lista\n");
 			printf("Sair\n");
 
@@ -182,14 +180,13 @@ int menu1() {//Menu de inicio do programa
 				posicao = 9;
 		}
 		else if (posicao == 2) {
-			printf("\n***Escolha uma opcao:\n\n");
+			printf("\n\tEscolha uma opcao:\n\n");
 			printf("Cadastrar Imovel\n");
 			printf("\t%sConsultar imoveis disponiveis\n", ">>");
 			printf("Buscar imoveis\n");
 			printf("Imoveis disponiveis\n");
 			printf("Excluir Imovel\n");
 			printf("Editar imovel\n");
-			printf("Salvar lista\n");
 			printf("Ler lista\n");
 			printf("Sair\n");
 
@@ -203,14 +200,13 @@ int menu1() {//Menu de inicio do programa
 				posicao = 1;
 		}
 		else if (posicao == 3) {
-			printf("\n***Escolha uma opcao:\n\n");
+			printf("\n\tEscolha uma opcao:\n\n");
 			printf("Cadastrar Imovel\n");
 			printf("Consultar imoveis disponiveis\n");
 			printf("\t%sBuscar imoveis\n", ">>");
 			printf("Imoveis disponiveis\n");
 			printf("Excluir Imovel\n");
 			printf("Editar imovel\n");
-			printf("Salvar lista\n");
 			printf("Ler lista\n");
 			printf("Sair\n");
 
@@ -224,14 +220,13 @@ int menu1() {//Menu de inicio do programa
 				posicao = 2;
 		}
 		else if (posicao == 4) {
-			printf("\n***Escolha uma opcao:\n\n");
+			printf("\n\tEscolha uma opcao:\n\n");
 			printf("Cadastrar Imovel\n");
 			printf("Consultar imoveis disponiveis\n");
 			printf("Buscar imoveis\n");
 			printf("\t%sImoveis disponiveis\n", ">>");
 			printf("Excluir Imovel\n");
 			printf("Editar imovel\n");
-			printf("Salvar lista\n");
 			printf("Ler lista\n");
 			printf("Sair\n");
 
@@ -245,14 +240,13 @@ int menu1() {//Menu de inicio do programa
 				posicao = 3;
 		}
 		else if (posicao == 5) {
-			printf("\n***Escolha uma opcao:\n\n");
+			printf("\n\tEscolha uma opcao:\n\n");
 			printf("Cadastrar Imovel\n");
 			printf("Consultar imoveis disponiveis\n");
 			printf("Buscar imoveis\n");
 			printf("Imoveis disponiveis\n");
 			printf("\t%sExcluir Imovel\n", ">>");
 			printf("Editar imovel\n");
-			printf("Salvar lista\n");
 			printf("Ler lista\n");
 			printf("Sair\n");
 
@@ -266,14 +260,13 @@ int menu1() {//Menu de inicio do programa
 				posicao = 4;
 		}
 		else if (posicao == 6) {
-			printf("\n***Escolha uma opcao:\n\n");
+			printf("\n\tEscolha uma opcao:\n\n");
 			printf("Cadastrar Imovel\n");
 			printf("Consultar imoveis disponiveis\n");
 			printf("Buscar imoveis\n");
 			printf("Imoveis disponiveis\n");
 			printf("Excluir Imovel\n");
 			printf("\t%sEditar imovel\n", ">>");
-			printf("Salvar lista\n");
 			printf("Ler lista\n");
 			printf("Sair\n");
 
@@ -285,17 +278,16 @@ int menu1() {//Menu de inicio do programa
 				posicao = 7;
 			else if (tecla == SETA_CIMA)
 				posicao = 5;
-		}
-		else if (posicao == 7) {
-			printf("\n***Escolha uma opcao:\n\n");
+
+		}else if (posicao == 7) {
+			printf("\n\tEscolha uma opcao:\n\n");
 			printf("Cadastrar Imovel\n");
 			printf("Consultar imoveis disponiveis\n");
 			printf("Buscar imoveis\n");
 			printf("Imoveis disponiveis\n");
 			printf("Excluir Imovel\n");
 			printf("Editar imovel\n");
-			printf("\t%sSalvar lista\n", ">>");
-			printf("Ler lista\n");
+			printf("\t%sLer lista\n", ">>");
 			printf("Sair\n");
 
 			tecla = getch();
@@ -308,46 +300,24 @@ int menu1() {//Menu de inicio do programa
 				posicao = 6;
 		}
 		else if (posicao == 8) {
-			printf("\n***Escolha uma opcao:\n\n");
+			printf("\n\tEscolha uma opcao:\n\n");
 			printf("Cadastrar Imovel\n");
 			printf("Consultar imoveis disponiveis\n");
 			printf("Buscar imoveis\n");
 			printf("Imoveis disponiveis\n");
 			printf("Excluir Imovel\n");
 			printf("Editar imovel\n");
-			printf("Salvar lista\n");
-			printf("\t%sLer lista\n", ">>");
-			printf("Sair\n");
-
-			tecla = getch();
-
-			if (tecla == ENTER)
-				return 8;
-			else if (tecla == SETA_BAIXO)
-				posicao = 9;
-			else if (tecla == SETA_CIMA)
-				posicao = 7;
-		}
-		else if (posicao == 9) {
-			printf("\n***Escolha uma opcao:\n\n");
-			printf("Cadastrar Imovel\n");
-			printf("Consultar imoveis disponiveis\n");
-			printf("Buscar imoveis\n");
-			printf("Imoveis disponiveis\n");
-			printf("Excluir Imovel\n");
-			printf("Editar imovel\n");
-			printf("Salvar lista\n");
 			printf("Ler lista\n");
 			printf("\t%sSair\n", ">>");
 
 			tecla = getch();
 
 			if (tecla == ENTER)
-				return 9;
+				return 8;
 			else if (tecla == SETA_BAIXO)
 				posicao = 1;
 			else if (tecla == SETA_CIMA)
-				posicao = 8;
+				posicao = 7;
 		}
 	}
 }
@@ -361,7 +331,7 @@ int menu2() {//menu apos o usario selecionar a opção cadastrar
 		CLEAR;
 
 		if (posicao == 1) {
-			printf("\n***Escolha uma opcao:\n\n");
+			printf("\n\tEscolha uma opcao:\n\n");
 			printf("\t%sCasa\n", ">>");
 			printf("Apartamento\n");
 			printf("Terreno\n");
@@ -374,11 +344,11 @@ int menu2() {//menu apos o usario selecionar a opção cadastrar
 			else if (tecla == SETA_BAIXO)
 				posicao = 2;
 			else if (tecla == SETA_CIMA)
-				posicao = 3;
+				posicao = 4;
 		}
 
 		else if (posicao == 2) {
-			printf("\n***Escolha uma opcao:\n\n");
+			printf("\n\tEscolha uma opcao:\n\n");
 			printf("Casa\n");
 			printf("\t%sApartamento\n", ">>");
 			printf("Terreno\n");
@@ -396,7 +366,7 @@ int menu2() {//menu apos o usario selecionar a opção cadastrar
 
 		else if (posicao == 3) {
 
-			printf("\n***Escolha uma opcao:\n\n");
+			printf("\n\tEscolha uma opcao:\n\n");
 			printf("Casa\n");
 			printf("Apartamento\n");
 			printf("\t%sTerreno\n", ">>");
@@ -415,7 +385,7 @@ int menu2() {//menu apos o usario selecionar a opção cadastrar
 		}
 
 		else if (posicao == 4) {
-				printf("\n***Escolha uma opcao:\n\n");
+				printf("\n\tEscolha uma opcao:\n\n");
 				printf("Casa\n", ">>");
 				printf("Apartamento\n");
 				printf("Terreno\n");
@@ -442,7 +412,7 @@ int menu3(int flag){
 		CLEAR;
 
 		if (posicao == 1){
-			printf("\n***Deseja salvar as informacoes?\n\n");
+			printf("\n\tDeseja salvar as informacoes?\n\n");
 			printf("\t%sSim\n", ">>");
 			printf("Nao\n");
 
@@ -458,7 +428,7 @@ int menu3(int flag){
 				posicao = 2;
 		}
 		else if (posicao == 2){
-			printf("\n***Deseja salvar as informacoes?\n\n");
+			printf("\n\tDeseja salvar as informacoes?\n\n");
 			printf("Sim\n");
 			printf("\t%sNao\n", ">>");
 
@@ -743,6 +713,8 @@ void Exibe(int flag){//Função que exibe imoveis disponiveis
 				printf("Disponivel: %s\n", imovel[i].disponivel);
 				printf("Titulo: %s\n", imovel[i].titulo);
 				printf("Area do terreno : %f\n\n\n", imovel[i].terreno.area);
+			}else{
+				printf("Imovel nao encontrado");
 			}
 		}
 	}
@@ -784,7 +756,7 @@ int main(void) {
 				break;
             case 2:
 				flaglobal = menu2();
-				switch (menu2()){
+				switch (flaglobal){
 					case 1:
 						Exibe(flaglobal);
 						flagmenu = 0;
@@ -805,14 +777,17 @@ int main(void) {
 			case 3:
 				switch (menu4()){
 					case 1:
+						flaglobal = menu2();
 						BuscaTitulo(flaglobal);
 						flagmenu = 0;
 						break;
 					case 2:
+						flaglobal = menu2();
 						BuscaTitulo(flaglobal);
 						flagmenu = 0;
 						break;
 					case 3:
+						flaglobal = menu2();
 						BuscaTitulo(flaglobal);
 						flagmenu = 0;
 						break;
