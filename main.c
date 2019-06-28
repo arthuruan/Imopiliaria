@@ -437,7 +437,7 @@ int menu3(int flag){
 			else if (tecla == SETA_BAIXO)
 				posicao = 1;
 			else if (tecla == SETA_CIMA)
-				posicao = 2;
+				posicao = 1;
 		}
 	}
 }
