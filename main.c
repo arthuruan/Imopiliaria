@@ -404,12 +404,14 @@ void lerArquivoImovel(int flag) {
 		imovel[i].titulo[strlen(imovel[i].titulo) - 1] = '\0';
 
 		if (flag == 1) {//ler informacoes da casa
+			imovel[i].estado = 1;
 			fscanf(arquivo, "%d\n", &imovel[i].casa.pavimentos);
 			fscanf(arquivo, "%d\n", &imovel[i].casa.quartos);
 			fscanf(arquivo, "%.1f\n", &imovel[i].casa.areaTerreno);
 			fscanf(arquivo, "%.1f\n", &imovel[i].casa.areaConst);
 		}
 		else if (flag == 2) {//ler informacoes do apartamento
+			imovel[i].estado = 2;
 			fgets(imovel[i].apartamento.posicao, 100, arquivo);
 			imovel[i].apartamento.posicao[strlen(imovel[i].apartamento.posicao) - 1] = '\0';
 			fscanf(arquivo, "%d\n", &imovel[i].apartamento.quartos);
@@ -419,6 +421,7 @@ void lerArquivoImovel(int flag) {
 			fscanf(arquivo, "%d\n", &imovel[i].apartamento.garagem);
 		}
 		else if (flag == 3) {//ler informacoes do terreno
+			imovel[i].estado = 3;
 			fscanf(arquivo, "%.1f\n", &imovel[i].terreno.area);
 		}
 	}
