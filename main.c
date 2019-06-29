@@ -63,6 +63,7 @@ void disponibilidade(int disp){
 
 			if(imovel[i].estado == 1){
 
+				printf("Imovel : Casa\n\n");
 				printf("Cidade : %s\n", imovel[i].cidade);
 				printf("Endereco : %s\n", imovel[i].endereco);
 				printf("CEP : %s\n", imovel[i].cep);
@@ -76,6 +77,7 @@ void disponibilidade(int disp){
 
 			}else if(imovel[i].estado == 2){
 
+				printf("Imovel : Apartamento\n\n");
 				printf("Cidade : %s\n", imovel[i].cidade);
 				printf("Endereco : %s\n", imovel[i].endereco);
 				printf("CEP : %s\n", imovel[i].cep);
@@ -91,6 +93,7 @@ void disponibilidade(int disp){
 
 			}else if(imovel[i].estado == 3){
 
+				printf("Imovel : Terreno\n\n");
 				printf("Cidade : %s\n", imovel[i].cidade);
 				printf("Endereco : %s\n", imovel[i].endereco);
 				printf("CEP : %s\n", imovel[i].cep);
@@ -104,6 +107,7 @@ void disponibilidade(int disp){
 
 			if(imovel[i].estado == 1){
 
+				printf("Imovel : Casa\n\n");
 				printf("Cidade : %s\n", imovel[i].cidade);
 				printf("Endereco : %s\n", imovel[i].endereco);
 				printf("CEP : %s\n", imovel[i].cep);
@@ -117,6 +121,7 @@ void disponibilidade(int disp){
 
 			}else if(imovel[i].estado == 2){
 
+				printf("Imovel : Apartamento\n\n");
 				printf("Cidade : %s\n", imovel[i].cidade);
 				printf("Endereco : %s\n", imovel[i].endereco);
 				printf("CEP : %s\n", imovel[i].cep);
@@ -132,6 +137,7 @@ void disponibilidade(int disp){
 
 			}else if(imovel[i].estado == 3){
 
+				printf("Imovel : Terreno\n\n");
 				printf("Cidade : %s\n", imovel[i].cidade);
 				printf("Endereco : %s\n", imovel[i].endereco);
 				printf("CEP : %s\n", imovel[i].cep);
