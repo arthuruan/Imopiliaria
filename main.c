@@ -390,26 +390,26 @@ void salvaArquivoImovel(int flag) {
 			fprintf(arquivo, "%s\n", imovel[i].bairro);
 			fprintf(arquivo, "%s\n", imovel[i].endereco);
 			fprintf(arquivo, "%s\n", imovel[i].cep);
-			fprintf(arquivo, "%f\n", imovel[i].valor);
+			fprintf(arquivo, "%.1f\n", imovel[i].valor);
 			fprintf(arquivo, "%s\n", imovel[i].disponivel);
 			fprintf(arquivo, "%s\n", imovel[i].titulo);
 
 			if (flag == 1) {//informacoes da casa
 				fprintf(arquivo, "%d\n", imovel[i].casa.pavimentos);
 				fprintf(arquivo, "%d\n", imovel[i].casa.quartos);
-				fprintf(arquivo, "%f\n", imovel[i].casa.areaTerreno);
-				fprintf(arquivo, "%f\n", imovel[i].casa.areaConst);
+				fprintf(arquivo, "%.1f\n", imovel[i].casa.areaTerreno);
+				fprintf(arquivo, "%.1f\n", imovel[i].casa.areaConst);
 			}
 			else if (flag == 2) {//informacoes do apartamento
 				fprintf(arquivo, "%s\n", imovel[i].apartamento.posicao);
 				fprintf(arquivo, "%d\n", imovel[i].apartamento.quartos);
-				fprintf(arquivo, "%f\n", imovel[i].apartamento.area);
+				fprintf(arquivo, "%.1f\n", imovel[i].apartamento.area);
 				fprintf(arquivo, "%d\n", imovel[i].apartamento.andar);
-				fprintf(arquivo, "%f\n", imovel[i].apartamento.valorCond);
+				fprintf(arquivo, "%.1f\n", imovel[i].apartamento.valorCond);
 				fprintf(arquivo, "%d\n", imovel[i].apartamento.garagem);
 			}
 			else if (flag == 3) {//informacoes do terreno
-				fprintf(arquivo, "%f\n", imovel[i].terreno.area);
+				fprintf(arquivo, "%.1f\n", imovel[i].terreno.area);
 			}
 		}
 	}
