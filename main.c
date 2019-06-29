@@ -51,6 +51,97 @@ typedef struct Cadastro{
 
 t_cadastro imovel[100];
 
+void disponibilidade(int disp){
+
+	int i;
+
+	if(disp == 1 && !strcmp(imovel[i].disponivel,"aluguel")){
+
+		if(imovel[i].estado == 1){
+
+			printf("Cidade : %s\n", imovel[i].cidade);
+			printf("Endereco : %s\n", imovel[i].endereco);
+			printf("CEP : %s\n", imovel[i].cep);
+			printf("Valor : %.1f\n", imovel[i].valor);
+			printf("Disponibilidade : %s\n", imovel[i].disponivel);
+			printf("Titulo do imovel : %s\n", imovel[i].titulo);
+			printf("Pavimentos : %d\n", imovel[i].casa.pavimentos);
+			printf("Quartos : %d\n", imovel[i].casa.quartos);
+			printf("Area do terreno : %.1f\n", imovel[i].casa.areaTerreno);
+			printf("Area construida : %.1f\n\n\n", imovel[i].casa.areaConst);
+
+		}else if(imovel[i].estado == 2){
+
+			printf("Cidade : %s\n", imovel[i].cidade);
+			printf("Endereco : %s\n", imovel[i].endereco);
+			printf("CEP : %s\n", imovel[i].cep);
+			printf("Valor: %.1f\n", imovel[i].valor);
+			printf("Disponibilidade  %s\n", imovel[i].disponivel);
+			printf("Titulo do imovel : %s\n", imovel[i].titulo);
+			printf("Posicao : %s\n", imovel[i].apartamento.posicao);
+			printf("Quartos : %d\n", imovel[i].apartamento.quartos);
+			printf("Area : %f\n", imovel[i].apartamento.area);
+			printf("Andar : %d\n", imovel[i].apartamento.andar);
+			printf("Valor do condominio : %f\n", imovel[i].apartamento.valorCond);
+			printf("Garagem : %d\n\n\n", imovel[i].apartamento.garagem);
+
+		}else if(imovel[i].estado == 3){
+
+			printf("Cidade : %s\n", imovel[i].cidade);
+			printf("Endereco : %s\n", imovel[i].endereco);
+			printf("CEP : %s\n", imovel[i].cep);
+			printf("Valor : %.1f\n", imovel[i].valor);
+			printf("Disponibilidade : %s\n", imovel[i].disponivel);
+			printf("Titulo ddo imovel  : %s\n", imovel[i].titulo);
+			printf("Area do terreno : %f\n\n\n", imovel[i].terreno.area);
+		}
+
+	}else if(disp == 2 && !strcmp(imovel[i].disponivel,"venda")){
+
+		if(imovel[i].estado == 1){
+
+			printf("Cidade : %s\n", imovel[i].cidade);
+			printf("Endereco : %s\n", imovel[i].endereco);
+			printf("CEP : %s\n", imovel[i].cep);
+			printf("Valor : %.1f\n", imovel[i].valor);
+			printf("Disponibilidade : %s\n", imovel[i].disponivel);
+			printf("Titulo do imovel : %s\n", imovel[i].titulo);
+			printf("Pavimentos : %d\n", imovel[i].casa.pavimentos);
+			printf("Quartos : %d\n", imovel[i].casa.quartos);
+			printf("Area do terreno : %.1f\n", imovel[i].casa.areaTerreno);
+			printf("Area construida : %.1f\n\n\n", imovel[i].casa.areaConst);
+
+		}else if(imovel[i].estado == 2){
+
+			printf("Cidade : %s\n", imovel[i].cidade);
+			printf("Endereco : %s\n", imovel[i].endereco);
+			printf("CEP : %s\n", imovel[i].cep);
+			printf("Valor: %.1f\n", imovel[i].valor);
+			printf("Disponibilidade  %s\n", imovel[i].disponivel);
+			printf("Titulo do imovel : %s\n", imovel[i].titulo);
+			printf("Posicao : %s\n", imovel[i].apartamento.posicao);
+			printf("Quartos : %d\n", imovel[i].apartamento.quartos);
+			printf("Area : %f\n", imovel[i].apartamento.area);
+			printf("Andar : %d\n", imovel[i].apartamento.andar);
+			printf("Valor do condominio : %f\n", imovel[i].apartamento.valorCond);
+			printf("Garagem : %d\n\n\n", imovel[i].apartamento.garagem);
+
+		}else if(imovel[i].estado == 3){
+
+			printf("Cidade : %s\n", imovel[i].cidade);
+			printf("Endereco : %s\n", imovel[i].endereco);
+			printf("CEP : %s\n", imovel[i].cep);
+			printf("Valor : %.1f\n", imovel[i].valor);
+			printf("Disponibilidade : %s\n", imovel[i].disponivel);
+			printf("Titulo ddo imovel  : %s\n", imovel[i].titulo);
+			printf("Area do terreno : %f\n\n\n", imovel[i].terreno.area);
+		
+		}
+
+	}
+	
+}
+
 void BuscaTitulo(int flaglobal){
 
     CLEAR;
@@ -519,6 +610,44 @@ int menu4(){
 		}
 	}
 }
+int menu5(){
+	int tecla, posicao = 1;
+
+	while (1){
+
+		CLEAR;
+
+		if (posicao == 1){
+			printf("\n\tEscolha uma opcao:\n\n");
+			printf("\t%sAluguel\n", ">>");
+			printf("Venda\n");
+
+			tecla = getch();
+
+			if (tecla == ENTER){
+				return 1;
+			}
+			else if (tecla == SETA_BAIXO)
+				posicao = 2;
+			else if (tecla == SETA_CIMA)
+				posicao = 2;
+		}
+		else if (posicao == 2){
+			printf("\n\tEscolha uma opcao:\n\n");
+			printf("Aluguel\n");
+			printf("\t%sVenda\n", ">>");
+
+			tecla = getch();
+
+			if (tecla == ENTER)
+				return 2;
+			else if (tecla == SETA_BAIXO)
+				posicao = 1;
+			else if (tecla == SETA_CIMA)
+				posicao = 1;
+		}
+	}
+}
 
 void CadastroAll(int flag){
 
@@ -795,6 +924,20 @@ int main(void) {
 				}
 				break;
 			case 4:
+				switch(menu5()){
+					case 1:
+						disponibilidade(1);
+						flagmenu = 0;
+						break;
+					case 2:
+						disponibilidade(2);
+						flagmenu = 0;
+						break;
+					case 3:
+						flagmenu = 0;
+						break;
+				}
+
 				break;
 			case 5:
 				break;
