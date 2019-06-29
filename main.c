@@ -51,7 +51,7 @@ typedef struct Cadastro{
 
 t_cadastro imovel[100];
 
-void DeletaImovel(){//recebe a posicao do imovel no vetor, zera essa posicao, e dps desloca tudo
+void DeletaImovel(){
 	
 	int i, posicao;
 
