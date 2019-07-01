@@ -362,7 +362,7 @@ void DeletaImovel(){
 
 	CLEAR;
 
-	printf("Digite a posicoa do seu imovel: ");
+	printf("Digite a posicao do seu imovel: ");
     scanf("%d", &posicao);
 	FLUSH;
 
@@ -396,7 +396,7 @@ void disponibilidade(int disp){
 				printf("Pavimentos : %d\n", imovel[i].casa.pavimentos);
 				printf("Quartos : %d\n", imovel[i].casa.quartos);
 				printf("Area do terreno : %.2f\n", imovel[i].casa.areaTerreno);
-				printf("Area construida : %.2f\n\n\n", imovel[i].casa.areaConst);
+				printf("Area construida : %.2f\n\n", imovel[i].casa.areaConst);
 				printf("Posicao de cadastro do imovel: %d\n\n", i+1);
 
 			}else if(imovel[i].estado == 2){
@@ -413,7 +413,7 @@ void disponibilidade(int disp){
 				printf("Area : %.2f\n", imovel[i].apartamento.area);
 				printf("Andar : %d\n", imovel[i].apartamento.andar);
 				printf("Valor do condominio : %.2f\n", imovel[i].apartamento.valorCond);
-				printf("Garagem : %d\n\n\n", imovel[i].apartamento.garagem);
+				printf("Garagem : %d\n\n", imovel[i].apartamento.garagem);
 				printf("Posicao de cadastro do imovel: %d\n\n", i+1);
 
 			}else if(imovel[i].estado == 3){
@@ -425,7 +425,7 @@ void disponibilidade(int disp){
 				printf("Valor : %.2f\n", imovel[i].valor);
 				printf("Disponibilidade : %s\n", imovel[i].disponivel);
 				printf("Titulo ddo imovel  : %s\n", imovel[i].titulo);
-				printf("Area do terreno : %.2f\n\n\n", imovel[i].terreno.area);
+				printf("Area do terreno : %.2f\n\n", imovel[i].terreno.area);
 				printf("Posicao de cadastro do imovel: %d\n\n", i+1);
 
 			}
@@ -443,7 +443,7 @@ void disponibilidade(int disp){
 				printf("Pavimentos : %d\n", imovel[i].casa.pavimentos);
 				printf("Quartos : %d\n", imovel[i].casa.quartos);
 				printf("Area do terreno : %.2f\n", imovel[i].casa.areaTerreno);
-				printf("Area construida : %.2f\n\n\n", imovel[i].casa.areaConst);
+				printf("Area construida : %.2f\n\n", imovel[i].casa.areaConst);
 				printf("Posicao de cadastro do imovel: %d\n\n", i+1);
 
 			}else if(imovel[i].estado == 2){
@@ -460,7 +460,7 @@ void disponibilidade(int disp){
 				printf("Area : %.2f\n", imovel[i].apartamento.area);
 				printf("Andar : %d\n", imovel[i].apartamento.andar);
 				printf("Valor do condominio : %.2f\n", imovel[i].apartamento.valorCond);
-				printf("Garagem : %d\n\n\n", imovel[i].apartamento.garagem);
+				printf("Garagem : %d\n\n", imovel[i].apartamento.garagem);
 				printf("Posicao de cadastro do imovel: %d\n\n", i+1);
 
 			}else if(imovel[i].estado == 3){
@@ -472,7 +472,7 @@ void disponibilidade(int disp){
 				printf("Valor : %.2f\n", imovel[i].valor);
 				printf("Disponibilidade : %s\n", imovel[i].disponivel);
 				printf("Titulo ddo imovel  : %s\n", imovel[i].titulo);
-				printf("Area do terreno : %.2f\n\n\n", imovel[i].terreno.area);
+				printf("Area do terreno : %.2f\n\n", imovel[i].terreno.area);
 				printf("Posicao de cadastro do imovel: %d\n\n", i+1);
 			}
 		}
@@ -493,7 +493,7 @@ void BuscaValor(){
 	CLEAR;
 	printf("Imoveis com valores maior disponiveis :\n\n");
 	for(i=0;i<100;i++){
-        if(valor < imovel[i].valor){
+        if(valor <= imovel[i].valor){
 			
 			if(imovel[i].estado == 1){
 
@@ -576,7 +576,7 @@ void BuscaBairro(){
                 printf("Pavimentos: %d\n", imovel[i].casa.pavimentos);
                 printf("Quartos: %d\n", imovel[i].casa.quartos);
                 printf("Area do terreno: %.2f\n", imovel[i].casa.areaTerreno);
-                printf("Area construida: %.2f\n", imovel[i].casa.areaConst);
+                printf("Area construida: %.2f\n\n", imovel[i].casa.areaConst);
                 printf("Posicao de cadastro do imovel: %d\n\n", i+1);
 
             }else if(imovel[i].estado == 2){
@@ -594,7 +594,7 @@ void BuscaBairro(){
 				printf("Area : %.2f\n", imovel[i].apartamento.area);
 				printf("Andar : %d\n", imovel[i].apartamento.andar);
 				printf("Valor do condominio : %.2f\n", imovel[i].apartamento.valorCond);
-				printf("Garagem : %d\n", imovel[i].apartamento.garagem);
+				printf("Garagem : %d\n\n", imovel[i].apartamento.garagem);
 				printf("Posicao de cadastro do imovel: %d\n\n", i+1);
 
             }else if(imovel[i].estado == 3){
@@ -607,7 +607,7 @@ void BuscaBairro(){
                 printf("Valor: %.2f\n", imovel[i].valor);
                 printf("Disponibilidade do imovel: %s\n", imovel[i].disponivel);
                 printf("Titulo de venda do imovel: %s\n", imovel[i].titulo);
-                printf("Area do terreno : %.2f\n", imovel[i].terreno.area);
+                printf("Area do terreno : %.2f\n\n", imovel[i].terreno.area);
 				printf("Posicao de cadastro do imovel: %d\n\n", i+1);
 
             }else{
@@ -642,7 +642,7 @@ void BuscaTitulo(){
                 printf("Pavimentos : %d\n", imovel[i].casa.pavimentos);
                 printf("Quartos : %d\n", imovel[i].casa.quartos);
                 printf("Area do terreno : %.2f\n", imovel[i].casa.areaTerreno);
-                printf("Area construida : %.2f\n\n\n", imovel[i].casa.areaConst);
+                printf("Area construida : %.2f\n\n", imovel[i].casa.areaConst);
 				printf("Posicao de cadastro do imovel: %d\n\n", i+1);
             }else if(imovel[i].estado == 2){
                 printf("Imovel: Apartamento\n\n");
@@ -657,7 +657,7 @@ void BuscaTitulo(){
 				printf("Area : %.2f\n", imovel[i].apartamento.area);
 				printf("Andar : %d\n", imovel[i].apartamento.andar);
 				printf("Valor do condominio : %.2f\n", imovel[i].apartamento.valorCond);
-				printf("Garagem : %d\n\n\n", imovel[i].apartamento.garagem);
+				printf("Garagem : %d\n\n", imovel[i].apartamento.garagem);
 				printf("Posicao de cadastro do imovel: %d\n\n", i+1);
             }else if(imovel[i].estado == 3){
                 printf("Imovel: Terreno\n\n");
@@ -694,7 +694,6 @@ int menu1() {//Menu de inicio do programa
 			printf("Imoveis disponiveis\n");
 			printf("Excluir Imovel\n");
 			printf("Editar imovel\n");
-			printf("Ler lista\n");
 			printf("Sair\n");
 
 			tecla = getch();
@@ -704,7 +703,7 @@ int menu1() {//Menu de inicio do programa
 			else if (tecla == SETA_BAIXO)
 				posicao = 2;
 			else if (tecla == SETA_CIMA)
-				posicao = 8;
+				posicao = 7;
 		}
 		else if (posicao == 2) {
 			printf("\n\tEscolha uma opcao:\n\n");
@@ -714,7 +713,6 @@ int menu1() {//Menu de inicio do programa
 			printf("Imoveis disponiveis\n");
 			printf("Excluir Imovel\n");
 			printf("Editar imovel\n");
-			printf("Ler lista\n");
 			printf("Sair\n");
 
 			tecla = getch();
@@ -734,7 +732,6 @@ int menu1() {//Menu de inicio do programa
 			printf("Imoveis disponiveis\n");
 			printf("Excluir Imovel\n");
 			printf("Editar imovel\n");
-			printf("Ler lista\n");
 			printf("Sair\n");
 
 			tecla = getch();
@@ -754,7 +751,6 @@ int menu1() {//Menu de inicio do programa
 			printf("\t%sImoveis disponiveis\n", ">>");
 			printf("Excluir Imovel\n");
 			printf("Editar imovel\n");
-			printf("Ler lista\n");
 			printf("Sair\n");
 
 			tecla = getch();
@@ -774,7 +770,6 @@ int menu1() {//Menu de inicio do programa
 			printf("Imoveis disponiveis\n");
 			printf("\t%sExcluir Imovel\n", ">>");
 			printf("Editar imovel\n");
-			printf("Ler lista\n");
 			printf("Sair\n");
 
 			tecla = getch();
@@ -794,7 +789,6 @@ int menu1() {//Menu de inicio do programa
 			printf("Imoveis disponiveis\n");
 			printf("Excluir Imovel\n");
 			printf("\t%sEditar imovel\n", ">>");
-			printf("Ler lista\n");
 			printf("Sair\n");
 
 			tecla = getch();
@@ -814,37 +808,16 @@ int menu1() {//Menu de inicio do programa
 			printf("Imoveis disponiveis\n");
 			printf("Excluir Imovel\n");
 			printf("Editar imovel\n");
-			printf("\t%sLer lista\n", ">>");
-			printf("Sair\n");
+			printf("\t%sSair\n", ">>");
 
 			tecla = getch();
 
 			if (tecla == ENTER)
 				return 7;
 			else if (tecla == SETA_BAIXO)
-				posicao = 8;
-			else if (tecla == SETA_CIMA)
-				posicao = 6;
-		}
-		else if (posicao == 8) {
-			printf("\n\tEscolha uma opcao:\n\n");
-			printf("Cadastrar Imovel\n");
-			printf("Consultar imoveis disponiveis\n");
-			printf("Buscar imoveis\n");
-			printf("Imoveis disponiveis\n");
-			printf("Excluir Imovel\n");
-			printf("Editar imovel\n");
-			printf("Ler lista\n");
-			printf("\t%sSair\n", ">>");
-
-			tecla = getch();
-
-			if (tecla == ENTER)
-				return 8;
-			else if (tecla == SETA_BAIXO)
 				posicao = 1;
 			else if (tecla == SETA_CIMA)
-				posicao = 7;
+				posicao = 6;
 		}
 	}
 }
@@ -1108,7 +1081,7 @@ void Exibe(){//Função que exibe imoveis disponiveis
 	CLEAR;
 	int i,cont = 0;
 	for(i=0;i<100;i++){
-		if(imovel[i].estado != 0){
+		if(imovel[i].estado != 0){//if para checar se possui imovel no array imovel[i]
 
 			if(imovel[i].estado == 1){
 				//print das informações da casa
@@ -1123,7 +1096,7 @@ void Exibe(){//Função que exibe imoveis disponiveis
 				printf("Pavimentos : %d\n", imovel[i].casa.pavimentos);
 				printf("Quartos : %d\n", imovel[i].casa.quartos);
 				printf("Area do terreno : %.2f\n", imovel[i].casa.areaTerreno);
-				printf("Area construida : %.2f\n\n\n", imovel[i].casa.areaConst);
+				printf("Area construida : %.2f\n\n", imovel[i].casa.areaConst);
 				printf("Posicao de cadastro do imovel: %d\n\n", i+1);
 				cont++;
 			}else if(imovel[i].estado == 2){
@@ -1141,7 +1114,7 @@ void Exibe(){//Função que exibe imoveis disponiveis
 				printf("Area : %.2f\n", imovel[i].apartamento.area);
 				printf("Andar : %d\n", imovel[i].apartamento.andar);
 				printf("Valor do condominio : %.2f\n", imovel[i].apartamento.valorCond);
-				printf("Garagem : %d\n\n\n", imovel[i].apartamento.garagem);
+				printf("Garagem : %d\n\n", imovel[i].apartamento.garagem);
 				printf("Posicao de cadastro do imovel: %d\n\n", i+1);
 				cont++;
 			}else if(imovel[i].estado == 3){
@@ -1154,13 +1127,13 @@ void Exibe(){//Função que exibe imoveis disponiveis
 				printf("Valor : %.2f\n", imovel[i].valor);
 				printf("Disponibilidade : %s\n", imovel[i].disponivel);
 				printf("Titulo do imovel : %s\n", imovel[i].titulo);
-				printf("Area do terreno : %.2f\n\n\n", imovel[i].terreno.area);
+				printf("Area do terreno : %.2f\n\n", imovel[i].terreno.area);
 				printf("Posicao de cadastro do imovel: %d\n\n", i+1);
 				cont++;
 			}
 		}
 	}
-	printf("Restam %d vagas para cadastro\n\n", i-cont);		
+	printf("Restam %d vagas para cadastro\n\n", i-cont);//quantidade de vagas de cadastro		
 	PAUSE;
 }
 
@@ -1241,8 +1214,6 @@ int main(void) {
 			case 6:
 				break;
 			case 7:
-				break;
-			case 8:
 				flagmenu = 1;
 				break;
         }
