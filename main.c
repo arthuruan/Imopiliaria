@@ -1125,7 +1125,7 @@ void Exibe(){//Função que exibe imoveis disponiveis
 
 int main(void) {
 
-    int flagmenu = 0, flaglobal;
+    int flagmenu = 0;
 
     while(1){
 
