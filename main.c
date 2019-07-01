@@ -5,8 +5,11 @@ versão alpha: 0.1
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <conio.h>
+#include <string.h>
 #include <Windows.h>
+
 
 #define CLEAR system("cls")
 #define PAUSE system("pause")
