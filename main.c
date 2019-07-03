@@ -1303,166 +1303,166 @@ void EditaImovel() {
 				FLUSH;
 
 				switch (respItem) {
-				case 1://CIDADE
-					printf("Anterior: %s\nNovo: ", imovel[codigo].cidade);
-					fgets(strResp, 100, stdin);
-					strResp[strlen(strResp) - 1] = '\0';
-					CLEAR;
+					case 1://CIDADE
+						printf("Anterior: %s\nNovo: ", imovel[codigo].cidade);
+						fgets(strResp, 100, stdin);
+						strResp[strlen(strResp) - 1] = '\0';
+						CLEAR;
 
-					printf("Nova informacao: %s\n", strResp);
-					PAUSE;
-					CLEAR;
+						printf("Nova informacao: %s\n", strResp);
+				
+						CLEAR;
 
-					if (menu7());
-					{
-						strcpy(imovel[codigo].cidade, strResp);
-					}
-					break;
-				case 2://ENDERECO
-					printf("Anterior: %s\nNovo: ", imovel[codigo].endereco);
-					fgets(strResp, 100, stdin);
-					strResp[strlen(strResp) - 1] = '\0';
-					CLEAR;
+						if (menu7());
+						{
+							strcpy(imovel[codigo].cidade, strResp);
+						}
+						break;
+					case 2://ENDERECO
+						printf("Anterior: %s\nNovo: ", imovel[codigo].endereco);
+						fgets(strResp, 100, stdin);
+						strResp[strlen(strResp) - 1] = '\0';
+						CLEAR;
 
-					printf("Nova informacao: %s\n", strResp);
-					PAUSE;
-					CLEAR;
+						printf("Nova informacao: %s\n", strResp);
+						
+						CLEAR;
 
-					if (menu7());
-					{
-						strcpy(imovel[codigo].endereco, strResp);
-					}
-					break;
-				case 3://BAIRRO
-					printf("Anterior: %s\nNovo: ", imovel[codigo].bairro);
-					fgets(strResp, 100, stdin);
-					strResp[strlen(strResp) - 1] = '\0';
-					CLEAR;
+						if (menu7());
+						{
+							strcpy(imovel[codigo].endereco, strResp);
+						}
+						break;
+					case 3://BAIRRO
+						printf("Anterior: %s\nNovo: ", imovel[codigo].bairro);
+						fgets(strResp, 100, stdin);
+						strResp[strlen(strResp) - 1] = '\0';
+						CLEAR;
 
-					printf("Nova informacao: %s\n", strResp);
-					PAUSE;
-					CLEAR;
+						printf("Nova informacao: %s\n", strResp);
+						
+						CLEAR;
 
-					if (menu7());
-					{
-						strcpy(imovel[codigo].bairro, strResp);
-					}
-					break;
-				case 4://CEP
-					printf("Anterior: %s\nNovo: ", imovel[codigo].cep);
-					fgets(strResp, 100, stdin);
-					strResp[strlen(strResp) - 1] = '\0';
-					CLEAR;
+						if (menu7());
+						{
+							strcpy(imovel[codigo].bairro, strResp);
+						}
+						break;
+					case 4://CEP
+						printf("Anterior: %s\nNovo: ", imovel[codigo].cep);
+						fgets(strResp, 100, stdin);
+						strResp[strlen(strResp) - 1] = '\0';
+						CLEAR;
 
-					printf("Nova informacao: %s\n", strResp);
-					PAUSE;
-					CLEAR;
+						printf("Nova informacao: %s\n", strResp);
+						PAUSE;
+						CLEAR;
 
-					if (menu7());
-					{
-						strcpy(imovel[codigo].cep, strResp);
-					}
-					break;
-				case 5://VALOR $
-					printf("Anterior: %.2f\nNovo: ", imovel[codigo].valor);
-					scanf("%f", &floatResp);
-					CLEAR;
+						if (menu7());
+						{
+							strcpy(imovel[codigo].cep, strResp);
+						}
+						break;
+					case 5://VALOR $
+						printf("Anterior: %.2f\nNovo: ", imovel[codigo].valor);
+						scanf("%f", &floatResp);
+						CLEAR;
 
-					printf("Nova informacao: %.2f\n", floatResp);
-					PAUSE;
-					CLEAR;
+						printf("Nova informacao: %.2f\n", floatResp);
+						
+						CLEAR;
 
-					if (menu7());
-					{
-						imovel[codigo].valor = floatResp;
-					}
-					break;
-				case 6://DISPONIBILIDADE
-					printf("Anterior: %s\nNovo(aluguel ou venda): ", imovel[codigo].disponivel);
-					fgets(strResp, 10, stdin);
-					strResp[strlen(strResp) - 1] = '\0';
-					CLEAR;
+						if (menu7());
+						{
+							imovel[codigo].valor = floatResp;
+						}
+						break;
+					case 6://DISPONIBILIDADE
+						printf("Anterior: %s\nNovo(aluguel ou venda): ", imovel[codigo].disponivel);
+						fgets(strResp, 10, stdin);
+						strResp[strlen(strResp) - 1] = '\0';
+						CLEAR;
 
-					printf("Nova informacao: %s\n", strResp);
-					PAUSE;
-					CLEAR;
+						printf("Nova informacao: %s\n", strResp);
+						
+						CLEAR;
 
-					if (menu7());
-					{
-						strcpy(imovel[codigo].disponivel, strResp);
-					}
-					break;
-				case 7://TITULO
-					printf("Anterior: %s\nNovo: ", imovel[codigo].titulo);
-					fgets(strResp, 100, stdin);
-					strResp[strlen(strResp) - 1] = '\0';
-					CLEAR;
+						if (menu7());
+						{
+							strcpy(imovel[codigo].disponivel, strResp);
+						}
+						break;
+					case 7://TITULO
+						printf("Anterior: %s\nNovo: ", imovel[codigo].titulo);
+						fgets(strResp, 100, stdin);
+						strResp[strlen(strResp) - 1] = '\0';
+						CLEAR;
 
-					printf("Nova informacao: %s\n", strResp);
-					PAUSE;
-					CLEAR;
+						printf("Nova informacao: %s\n", strResp);
+						
+						CLEAR;
 
-					if (menu7());
-					{
-						strcpy(imovel[codigo].titulo, strResp);
-					}
-					break;
-				case 8://PAVIMENTOS
-					printf("Anterior: %d\nNovo: ", imovel[codigo].casa.pavimentos);
-					scanf("%d", &respInt);
-					CLEAR;
+						if (menu7());
+						{
+							strcpy(imovel[codigo].titulo, strResp);
+						}
+						break;
+					case 8://PAVIMENTOS
+						printf("Anterior: %d\nNovo: ", imovel[codigo].casa.pavimentos);
+						scanf("%d", &respInt);
+						CLEAR;
 
-					printf("Nova informacao: %d\n", respInt);
-					PAUSE;
-					CLEAR;
+						printf("Nova informacao: %d\n", respInt);
+						
+						CLEAR;
 
-					if (menu7());
-					{
-						imovel[codigo].casa.pavimentos = respInt;
-					}
-					break;
-				case 9://QUARTOS
-					printf("Anterior: %d\nNovo: ", imovel[codigo].casa.quartos);
-					scanf("%d", &respInt);
-					CLEAR;
+						if (menu7());
+						{
+							imovel[codigo].casa.pavimentos = respInt;
+						}
+						break;
+					case 9://QUARTOS
+						printf("Anterior: %d\nNovo: ", imovel[codigo].casa.quartos);
+						scanf("%d", &respInt);
+						CLEAR;
 
-					printf("Nova informacao: %d\n", respInt);
-					PAUSE;
-					CLEAR;
+						printf("Nova informacao: %d\n", respInt);
+						
+						CLEAR;
 
-					if (menu7());
-					{
-						imovel[codigo].casa.quartos = respInt;
-					}
-					break;
-				case 10://AREA DO TERRENO
-					printf("Anterior: %.2f\nNovo: ", imovel[codigo].casa.areaTerreno);
-					scanf("%f", &floatResp);
-					CLEAR;
+						if (menu7());
+						{
+							imovel[codigo].casa.quartos = respInt;
+						}
+						break;
+					case 10://AREA DO TERRENO
+						printf("Anterior: %.2f\nNovo: ", imovel[codigo].casa.areaTerreno);
+						scanf("%f", &floatResp);
+						CLEAR;
 
-					printf("Nova informacao: %.2f\n", floatResp);
-					PAUSE;
-					CLEAR;
+						printf("Nova informacao: %.2f\n", floatResp);
+						
+						CLEAR;
 
-					if (menu7());
-					{
-						imovel[codigo].casa.areaTerreno = floatResp;
-					}
-					break;
-				case 11://AREA CONSTRUIDA
-					printf("Anterior: %.2f\nNovo: ", imovel[codigo].casa.areaConst);
-					scanf("%f", &floatResp);
-					CLEAR;
+						if (menu7());
+						{
+							imovel[codigo].casa.areaTerreno = floatResp;
+						}
+						break;
+					case 11://AREA CONSTRUIDA
+						printf("Anterior: %.2f\nNovo: ", imovel[codigo].casa.areaConst);
+						scanf("%f", &floatResp);
+						CLEAR;
 
-					printf("Nova informacao: %.2f\n", floatResp);
-					PAUSE;
-					CLEAR;
+						printf("Nova informacao: %.2f\n", floatResp);
+						
+						CLEAR;
 
-					if (menu7());
-					{
-						imovel[codigo].casa.areaConst = floatResp;
-					}
-					break;
+						if (menu7());
+						{
+							imovel[codigo].casa.areaConst = floatResp;
+						}
+						break;
 				}
 			}
 			else if (estado == 2) {//2 = apartamento
@@ -1487,200 +1487,200 @@ void EditaImovel() {
 				FLUSH;
 
 				switch (respItem) {
-				case 1://CIDADE
-					printf("Anterior: %s\nNovo: ", imovel[codigo].cidade);
-					fgets(strResp, 100, stdin);
-					strResp[strlen(strResp) - 1] = '\0';
-					CLEAR;
+					case 1://CIDADE
+						printf("Anterior: %s\nNovo: ", imovel[codigo].cidade);
+						fgets(strResp, 100, stdin);
+						strResp[strlen(strResp) - 1] = '\0';
+						CLEAR;
 
-					printf("Nova informacao: %s\n", strResp);
-					PAUSE;
-					CLEAR;
+						printf("Nova informacao: %s\n", strResp);
+						
+						CLEAR;
 
-					if (menu7());
-					{
-						strcpy(imovel[codigo].cidade, strResp);
-					}
-					break;
-				case 2://ENDERECO
-					printf("Anterior: %s\nNovo: ", imovel[codigo].endereco);
-					fgets(strResp, 100, stdin);
-					strResp[strlen(strResp) - 1] = '\0';
-					CLEAR;
+						if (menu7());
+						{
+							strcpy(imovel[codigo].cidade, strResp);
+						}
+						break;
+					case 2://ENDERECO
+						printf("Anterior: %s\nNovo: ", imovel[codigo].endereco);
+						fgets(strResp, 100, stdin);
+						strResp[strlen(strResp) - 1] = '\0';
+						CLEAR;
 
-					printf("Nova informacao: %s\n", strResp);
-					PAUSE;
-					CLEAR;
+						printf("Nova informacao: %s\n", strResp);
+						
+						CLEAR;
 
-					if (menu7());
-					{
-						strcpy(imovel[codigo].endereco, strResp);
-					}
-					break;
-				case 3://BAIRRO
-					printf("Anterior: %s\nNovo: ", imovel[codigo].bairro);
-					fgets(strResp, 100, stdin);
-					strResp[strlen(strResp) - 1] = '\0';
-					CLEAR;
+						if (menu7());
+						{
+							strcpy(imovel[codigo].endereco, strResp);
+						}
+						break;
+					case 3://BAIRRO
+						printf("Anterior: %s\nNovo: ", imovel[codigo].bairro);
+						fgets(strResp, 100, stdin);
+						strResp[strlen(strResp) - 1] = '\0';
+						CLEAR;
 
-					printf("Nova informacao: %s\n", strResp);
-					PAUSE;
-					CLEAR;
+						printf("Nova informacao: %s\n", strResp);
+						
+						CLEAR;
 
-					if (menu7());
-					{
-						strcpy(imovel[codigo].bairro, strResp);
-					}
-					break;
-				case 4://CEP
-					printf("Anterior: %s\nNovo: ", imovel[codigo].cep);
-					fgets(strResp, 100, stdin);
-					strResp[strlen(strResp) - 1] = '\0';
-					CLEAR;
+						if (menu7());
+						{
+							strcpy(imovel[codigo].bairro, strResp);
+						}
+						break;
+					case 4://CEP
+						printf("Anterior: %s\nNovo: ", imovel[codigo].cep);
+						fgets(strResp, 100, stdin);
+						strResp[strlen(strResp) - 1] = '\0';
+						CLEAR;
 
-					printf("Nova informacao: %s\n", strResp);
-					PAUSE;
-					CLEAR;
+						printf("Nova informacao: %s\n", strResp);
+						
+						CLEAR;
 
-					if (menu7());
-					{
-						strcpy(imovel[codigo].cep, strResp);
-					}
-					break;
-				case 5://VALOR $
-					printf("Anterior: %.2f\nNovo: ", imovel[codigo].valor);
-					scanf("%f", &floatResp);
-					CLEAR;
+						if (menu7());
+						{
+							strcpy(imovel[codigo].cep, strResp);
+						}
+						break;
+					case 5://VALOR $
+						printf("Anterior: %.2f\nNovo: ", imovel[codigo].valor);
+						scanf("%f", &floatResp);
+						CLEAR;
 
-					printf("Nova informacao: %.2f\n", floatResp);
-					PAUSE;
-					CLEAR;
+						printf("Nova informacao: %.2f\n", floatResp);
+						
+						CLEAR;
 
-					if (menu7());
-					{
-						imovel[codigo].valor = floatResp;
-					}
-					break;
-				case 6://DISPONIBILIDADE
-					printf("Anterior: %s\nNovo(aluguel ou venda): ", imovel[codigo].disponivel);
-					fgets(strResp, 10, stdin);
-					strResp[strlen(strResp) - 1] = '\0';
-					CLEAR;
+						if (menu7());
+						{
+							imovel[codigo].valor = floatResp;
+						}
+						break;
+					case 6://DISPONIBILIDADE
+						printf("Anterior: %s\nNovo(aluguel ou venda): ", imovel[codigo].disponivel);
+						fgets(strResp, 10, stdin);
+						strResp[strlen(strResp) - 1] = '\0';
+						CLEAR;
 
-					printf("Nova informacao: %s\n", strResp);
-					PAUSE;
-					CLEAR;
+						printf("Nova informacao: %s\n", strResp);
+						
+						CLEAR;
 
-					if (menu7());
-					{
-						strcpy(imovel[codigo].disponivel, strResp);
-					}
-					break;
-				case 7://TITULO
-					printf("Anterior: %s\nNovo: ", imovel[codigo].titulo);
-					fgets(strResp, 100, stdin);
-					strResp[strlen(strResp) - 1] = '\0';
-					CLEAR;
+						if (menu7());
+						{
+							strcpy(imovel[codigo].disponivel, strResp);
+						}
+						break;
+					case 7://TITULO
+						printf("Anterior: %s\nNovo: ", imovel[codigo].titulo);
+						fgets(strResp, 100, stdin);
+						strResp[strlen(strResp) - 1] = '\0';
+						CLEAR;
 
-					printf("Nova informacao: %s\n", strResp);
-					PAUSE;
-					CLEAR;
+						printf("Nova informacao: %s\n", strResp);
+						
+						CLEAR;
 
-					if (menu7());
-					{
-						strcpy(imovel[codigo].titulo, strResp);
-					}
-					break;
+						if (menu7());
+						{
+							strcpy(imovel[codigo].titulo, strResp);
+						}
+						break;
 
-				case 8://POSICAO
-					printf("Anterior: %s\nNovo(nascente sul ou nascente norte): ", imovel[codigo].apartamento.posicao);
-					fgets(strResp, 100, stdin);
-					strResp[strlen(strResp) - 1] = '\0';
-					CLEAR;
+					case 8://POSICAO
+						printf("Anterior: %s\nNovo(nascente sul ou nascente norte): ", imovel[codigo].apartamento.posicao);
+						fgets(strResp, 100, stdin);
+						strResp[strlen(strResp) - 1] = '\0';
+						CLEAR;
 
-					printf("Nova informacao: %s\n", strResp);
-					PAUSE;
-					CLEAR;
+						printf("Nova informacao: %s\n", strResp);
+						
+						CLEAR;
 
-					if (menu7());
-					{
-						strcpy(imovel[codigo].apartamento.posicao, strResp);
-					}
-					break;
+						if (menu7());
+						{
+							strcpy(imovel[codigo].apartamento.posicao, strResp);
+						}
+						break;
 
-				case 9://QUARTOS
-					printf("Anterior: %d\nNovo: ", imovel[codigo].apartamento.quartos);
-					scanf("%d", &respInt);
-					CLEAR;
+					case 9://QUARTOS
+						printf("Anterior: %d\nNovo: ", imovel[codigo].apartamento.quartos);
+						scanf("%d", &respInt);
+						CLEAR;
 
-					printf("Nova informacao: %d\n", respInt);
-					PAUSE;
-					CLEAR;
+						printf("Nova informacao: %d\n", respInt);
+						
+						CLEAR;
 
-					if (menu7());
-					{
-						imovel[codigo].apartamento.quartos = respInt;
-					}
-					break;
+						if (menu7());
+						{
+							imovel[codigo].apartamento.quartos = respInt;
+						}
+						break;
 
-				case 10://AREA DO AP
-					printf("Anterior: %.2f\nNovo: ", imovel[codigo].apartamento.area);
-					scanf("%f", &floatResp);
-					CLEAR;
-
-
-					printf("Nova informacao: %.2f\n", floatResp);
-					PAUSE;
-					CLEAR;
-
-					if (menu7());
-					{
-						imovel[codigo].apartamento.area = floatResp;
-					}
-					break;
-				case 11://ANDAR DO AP
-					printf("Anterior: %d\nNovo: ", imovel[codigo].apartamento.andar);
-					scanf("%d", &respInt);
-					CLEAR;
-
-					printf("Nova informacao: %d\n", respInt);
-					PAUSE;
-					CLEAR;
-
-					if (menu7());
-					{
-						imovel[codigo].apartamento.andar = respInt;
-					}
-					break;
-				case 12://VALOR DO CONDOMINIO
-					printf("Anterior: %.2f\nNovo: ", imovel[codigo].apartamento.valorCond);
-					scanf("%f", &floatResp);
-					CLEAR;
+					case 10://AREA DO AP
+						printf("Anterior: %.2f\nNovo: ", imovel[codigo].apartamento.area);
+						scanf("%f", &floatResp);
+						CLEAR;
 
 
-					printf("Nova informacao: %.2f\n", floatResp);
-					PAUSE;
-					CLEAR;
+						printf("Nova informacao: %.2f\n", floatResp);
+						
+						CLEAR;
 
-					if (menu7());
-					{
-						imovel[codigo].apartamento.valorCond = floatResp;
-					}
-					break;
-				case 13://GARAGEM
-					printf("Anterior: %d\nNovo: ", imovel[codigo].apartamento.garagem);
-					scanf("%d", &respInt);
-					CLEAR;
+						if (menu7());
+						{
+							imovel[codigo].apartamento.area = floatResp;
+						}
+						break;
+					case 11://ANDAR DO AP
+						printf("Anterior: %d\nNovo: ", imovel[codigo].apartamento.andar);
+						scanf("%d", &respInt);
+						CLEAR;
 
-					printf("Nova informacao: %d\n", respInt);
-					PAUSE;
-					CLEAR;
+						printf("Nova informacao: %d\n", respInt);
+						
+						CLEAR;
 
-					if (menu7());
-					{
-						imovel[codigo].apartamento.garagem = respInt;
-					}
-					break;
+						if (menu7());
+						{
+							imovel[codigo].apartamento.andar = respInt;
+						}
+						break;
+					case 12://VALOR DO CONDOMINIO
+						printf("Anterior: %.2f\nNovo: ", imovel[codigo].apartamento.valorCond);
+						scanf("%f", &floatResp);
+						CLEAR;
+
+
+						printf("Nova informacao: %.2f\n", floatResp);
+						
+						CLEAR;
+
+						if (menu7());
+						{
+							imovel[codigo].apartamento.valorCond = floatResp;
+						}
+						break;
+					case 13://GARAGEM
+						printf("Anterior: %d\nNovo: ", imovel[codigo].apartamento.garagem);
+						scanf("%d", &respInt);
+						CLEAR;
+
+						printf("Nova informacao: %d\n", respInt);
+						
+						CLEAR;
+
+						if (menu7());
+						{
+							imovel[codigo].apartamento.garagem = respInt;
+						}
+						break;
 				}
 			}
 			else if (estado == 3) {//3 = terreno
@@ -1707,7 +1707,7 @@ void EditaImovel() {
 					CLEAR;
 
 					printf("Nova informacao: %s\n", strResp);
-					PAUSE;
+					
 					CLEAR;
 
 					if (menu7());
@@ -1722,7 +1722,7 @@ void EditaImovel() {
 					CLEAR;
 
 					printf("Nova informacao: %s\n", strResp);
-					PAUSE;
+					
 					CLEAR;
 
 					if (menu7());
@@ -1737,7 +1737,7 @@ void EditaImovel() {
 					CLEAR;
 
 					printf("Nova informacao: %s\n", strResp);
-					PAUSE;
+					
 					CLEAR;
 
 					if (menu7());
@@ -1752,7 +1752,7 @@ void EditaImovel() {
 					CLEAR;
 
 					printf("Nova informacao: %s\n", strResp);
-					PAUSE;
+					
 					CLEAR;
 
 					if (menu7());
@@ -1766,7 +1766,7 @@ void EditaImovel() {
 					CLEAR;
 
 					printf("Nova informacao: %.2f\n", floatResp);
-					PAUSE;
+					
 					CLEAR;
 
 					if (menu7());
@@ -1781,7 +1781,7 @@ void EditaImovel() {
 					CLEAR;
 
 					printf("Nova informacao: %s\n", strResp);
-					PAUSE;
+					
 					CLEAR;
 
 					if (menu7()); {
@@ -1795,7 +1795,7 @@ void EditaImovel() {
 					CLEAR;
 
 					printf("Nova informacao: %s\n", strResp);
-					PAUSE;
+					
 					CLEAR;
 
 					if (menu7());
@@ -1809,7 +1809,7 @@ void EditaImovel() {
 					CLEAR;
 
 					printf("Nova informacao: %.2f\n", floatResp);
-					PAUSE;
+					
 					CLEAR;
 
 					if (menu7());
@@ -1823,7 +1823,7 @@ void EditaImovel() {
 				printf("\nNao foi possivel acessar o imovel\n\n");
 		}
 		salvaArquivoImovel();
-		PAUSE;
+		
 		break;
 	}
 }
