@@ -6,7 +6,7 @@
 #include "Menu.h"
 #include "Arquivo.h"
 
-//Função de cadastro
+//FunÃ§Ã£o de cadastro
 void CadastroAll(int flag) {
 	int i;
 
@@ -169,10 +169,10 @@ void CadastroAll(int flag) {
 		}
 		i++;
 	}
-	menu3(i);//menu que pede a confimação para salvar o cadastro
+	menu3(i);//menu que pede a confimaÃ§Ã£o para salvar o cadastro
 }
 
-//Função que exibe imoveis disponiveis
+//FunÃ§Ã£o que exibe imoveis disponiveis
 void Exibe() {
 
 	CLEAR;
@@ -181,7 +181,7 @@ void Exibe() {
 	for (i = 0; i < 100; i++) {
 		if (imovel[i].estado != 0) {
 
-			if (imovel[i].estado == 1) {//print das informações da casa
+			if (imovel[i].estado == 1) {//print das informaÃ§Ãµes da casa
 				printf("Imovel : Casa\n\n");
 				printf("Cidade : %s\n", imovel[i].cidade);
 				printf("Bairro : %s\n", imovel[i].bairro);
@@ -197,7 +197,7 @@ void Exibe() {
 				printf("Posicao de cadastro do imovel: %d\n\n", i + 1);
 				cont++;
 			}
-			else if (imovel[i].estado == 2) {//print das informações do apartamento
+			else if (imovel[i].estado == 2) {//print das informaÃ§Ãµes do apartamento
 				printf("Imovel : Apartamento\n\n");
 				printf("Cidade: %s\n", imovel[i].cidade);
 				printf("Bairro : %s\n", imovel[i].bairro);
@@ -215,7 +215,7 @@ void Exibe() {
 				printf("Posicao de cadastro do imovel: %d\n\n", i + 1);
 				cont++;
 			}
-			else if (imovel[i].estado == 3) {//print das informações do terreno
+			else if (imovel[i].estado == 3) {//print das informaÃ§Ãµes do terreno
 				printf("Imovel : Terreno\n\n");
 				printf("Cidade : %s\n", imovel[i].cidade);
 				printf("Bairro : %s\n", imovel[i].bairro);
@@ -363,7 +363,7 @@ void BuscaBairro() {
 	PAUSE;
 }
 
-//Função buscar valores
+//FunÃ§Ã£o buscar valores
 void BuscaValor() {
 	CLEAR;
 	float valor;
@@ -430,8 +430,8 @@ void BuscaValor() {
 	}
 	PAUSE;
 }
-//função de busca por alguel || venda
-void disponibilidade(int disp){//parametro de entrada do menu5 para saber se é aluguel ou venda
+//funÃ§Ã£o de busca por alguel || venda
+void disponibilidade(int disp){//parametro de entrada do menu5 para saber se Ã© aluguel ou venda
 
 	CLEAR;
 
@@ -440,9 +440,9 @@ void disponibilidade(int disp){//parametro de entrada do menu5 para saber se é a
 	for(i=0;i<100;i++){
 
 		if(disp == 1 && !strcmp(imovel[i].disponivel,"aluguel")){
-		//condição de quando o parametro escolhido for aluguel
+		//condiÃ§Ã£o de quando o parametro escolhido for aluguel
 			if(imovel[i].estado == 1){
-				//informações casa
+				//informaÃ§Ãµes casa
 				printf("Imovel : Casa\n\n");
 				printf("Cidade : %s\n", imovel[i].cidade);
 				printf("Endereco : %s\n", imovel[i].endereco);
@@ -457,7 +457,7 @@ void disponibilidade(int disp){//parametro de entrada do menu5 para saber se é a
 				printf("Posicao de cadastro do imovel: %d\n\n", i+1);
 
 			}else if(imovel[i].estado == 2){
-				//informações apartamento
+				//informaÃ§Ãµees apartamento
 				printf("Imovel : Apartamento\n\n");
 				printf("Cidade : %s\n", imovel[i].cidade);
 				printf("Endereco : %s\n", imovel[i].endereco);
@@ -474,7 +474,7 @@ void disponibilidade(int disp){//parametro de entrada do menu5 para saber se é a
 				printf("Posicao de cadastro do imovel: %d\n\n", i+1);
 
 			}else if(imovel[i].estado == 3){
-				//informações terreno
+				//informaÃ§Ãµes terreno
 				printf("Imovel : Terreno\n\n");
 				printf("Cidade : %s\n", imovel[i].cidade);
 				printf("Endereco : %s\n", imovel[i].endereco);
@@ -487,9 +487,9 @@ void disponibilidade(int disp){//parametro de entrada do menu5 para saber se é a
 
 			}
 		}else if(disp == 2 && !strcmp(imovel[i].disponivel,"venda")){
-		//condição de quando o parametro escolhido for venda
+		//condiÃ§Ã£o de quando o parametro escolhido for venda
 			if(imovel[i].estado == 1){
-				//informações casa
+				//informaÃ§Ãµes casa
 				printf("Imovel : Casa\n\n");
 				printf("Cidade : %s\n", imovel[i].cidade);
 				printf("Endereco : %s\n", imovel[i].endereco);
@@ -504,7 +504,7 @@ void disponibilidade(int disp){//parametro de entrada do menu5 para saber se é a
 				printf("Posicao de cadastro do imovel: %d\n\n", i+1);
 
 			}else if(imovel[i].estado == 2){
-				//informações apartamento
+				//informaÃ§Ãµes apartamento
 				printf("Imovel : Apartamento\n\n");
 				printf("Cidade : %s\n", imovel[i].cidade);
 				printf("Endereco : %s\n", imovel[i].endereco);
@@ -521,7 +521,7 @@ void disponibilidade(int disp){//parametro de entrada do menu5 para saber se é a
 				printf("Posicao de cadastro do imovel: %d\n\n", i+1);
 
 			}else if(imovel[i].estado == 3){
-				//informações terreno
+				//informaÃ§Ãµes terreno
 				printf("Imovel : Terreno\n\n");
 				printf("Cidade : %s\n", imovel[i].cidade);
 				printf("Endereco : %s\n", imovel[i].endereco);
@@ -537,9 +537,9 @@ void disponibilidade(int disp){//parametro de entrada do menu5 para saber se é a
 
 	PAUSE;
 
-}//fim da função
+}//fim da funÃ§Ã£o
 
-//Função para deletar imoveis
+//FunÃ§Ã£o para deletar imoveis
 void DeletaImovel() {
 	int i, posicao;
 

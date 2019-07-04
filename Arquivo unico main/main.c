@@ -1,7 +1,7 @@
 /*
 Imopiliaria
 Produtores: Arthur Dionizio, Arthur Ruan, Samuel Laerte, Thiago Palacios.
-versão alpha: 0.1
+versão alpha: 1.0
 */
 
 #include <stdio.h>

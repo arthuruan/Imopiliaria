@@ -145,7 +145,7 @@ int menu1() {
 	}
 }
 
-//Menu apos o usario selecionar a opção cadastrar
+//Menu apos o usario selecionar a opÃ§Ã£o cadastrar
 int menu2() {
 
 	int tecla, posicao = 1;
@@ -221,7 +221,7 @@ int menu2() {
 	}
 }
 
-int menu3(int pos){//menu para salvar as informacoes no arquivo
+int menu3(int pos){//menu para salvar as informaÃ§Ãµes no arquivo
 
     int tecla, posicao = 1;
 
@@ -262,7 +262,7 @@ int menu3(int pos){//menu para salvar as informacoes no arquivo
 	}
 }
 
-int menu4(){//menu para as funções de buscar por titulo, bairro e valor
+int menu4(){//menu para as funÃ§Ãµes de buscar por titulo, bairro e valor
 
 	int tecla, posicao = 1;
 
@@ -336,7 +336,7 @@ int menu4(){//menu para as funções de buscar por titulo, bairro e valor
 	}
 }
 
-int menu5(){//menu feito para a função disponibilidade, com opções de alguel e venda
+int menu5(){//menu feito para a funÃ§Ã£o disponibilidade, com opÃ§Ãµes de alguel e venda
 
 	int tecla, posicao = 1;
 
@@ -394,7 +394,7 @@ int menu5(){//menu feito para a função disponibilidade, com opções de alguel e v
 	}
 }
 
-//Menu de confirmação de edição de imoveis
+//Menu de confirmaÃ§Ã£o de ediÃ§Ã£o de imoveis
 int menu6() {
 	int tecla, posicao = 1;
 
@@ -433,7 +433,7 @@ int menu6() {
 		}
 	}
 }
-//Função confirma? sim ou nao.
+//FunÃ§Ã£o confirma, sim ou nao.
 int menu7() {
 	int tecla, posicao = 1;
 

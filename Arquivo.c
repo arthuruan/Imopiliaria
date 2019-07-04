@@ -3,7 +3,7 @@
 #include <string.h>
 #include "Cadastro.h"
 
-//Salva as informações do vetor imovel em um arquivo .txt
+//Salva as informaÃ§Ãµes do vetor imovel em um arquivo .txt
 void salvaArquivoImovel() {
 	FILE* arquivo;
 	int i;
@@ -63,7 +63,7 @@ void salvaArquivoImovel() {
 	fclose(arquivo);
 }
 
-//Ler todas as informações do vetor imovel contidas no arquivo .txt
+//Ler todas as informaÃ§Ãµes do vetor imovel contidas no arquivo .txt
 void lerArquivoImovel() {
 	FILE* arquivo;
 	int i;
